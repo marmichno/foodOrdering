@@ -1,0 +1,19 @@
+.navbar{
+    position:absolute;
+    top:0;
+    width:100%;
+    height:7%;
+    z-index:4;
+
+    .navbarLogo{
+        background-image:url("../images/sushi.png");
+        background-size:contain;
+        background-repeat:no-repeat;
+        height:100%;
+        margin:2rem;
+        padding:4rem;
+        position:absolute;
+        right:0;
+        top:0;
+    }
+}

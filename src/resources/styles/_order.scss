@@ -1,0 +1,61 @@
+.orderMainContainer{
+    width:100vw;
+    height:100vh;
+    background-image:url("../images/background.JPG");
+    background-size:cover;
+    background-position:center;
+    background-attachment: fixed;
+    background-color:rgba(0, 0, 0, 0.6);
+    background-blend-mode:overlay;
+    overflow:hidden;
+    @include flexCenter();
+    flex-direction:column;
+
+    .foodHeadersContainer{
+        @include flexCenter();
+
+        h1{
+            font-size:4.5rem;
+            padding:5rem;
+            color:white;
+        }
+    }
+
+    .carouselContainer{
+        width:90%;
+        height:35%;
+        background-color:red;
+        
+        .slick-slider{
+            height:100%;
+
+            .slick-list{
+                height:100%;
+
+                .slick-track{
+                    height:100%;
+                }
+
+                .slick-slide{
+                    height:100%;
+                    background-color:cyan;
+                    @include flexCenter();
+
+                    div{
+                        width:80%;
+                        height:100%;
+                        @include flexCenter();
+
+                        .sliderElement{
+                            width:80%;
+                            height:100%;
+                            display:flex !important;
+                            @include flexCenter();
+                            background-color:red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
