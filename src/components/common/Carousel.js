@@ -13,34 +13,164 @@ export const Carousel = () =>{
       return (
           <Slider {...settings}>
             <div className="sliderElement">
-              <h3>slide</h3>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
             </div>
             <div className="sliderElement">
-              <h3>2</h3>
+            <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
             </div>
             <div className="sliderElement">
-              <h3>3</h3>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
             </div>
             <div className="sliderElement">
-              <h3>4</h3>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
             </div>
             <div className="sliderElement">
-              <h3>5</h3>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
             </div>
             <div className="sliderElement">
-              <h3>dyl</h3>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
             </div>
             <div className="sliderElement">
-              <h3>2</h3>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
             </div>
             <div className="sliderElement">
-              <h3>3</h3>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
             </div>
             <div className="sliderElement">
-              <h3>4</h3>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
             </div>
             <div className="sliderElement">
-              <h3>5</h3>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
+              <div>
+                <div className="productImage">
+                </div>
+                <div className="productDetails">
+                  <h3>Philadelphia 6.00$</h3>
+                </div>
+              </div>
             </div>
           </Slider>
       );
