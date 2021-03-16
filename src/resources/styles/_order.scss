@@ -31,7 +31,7 @@
 
     .carouselContainer{
         width:90%;
-        height:65%;
+        height:55%;
         
         .slick-slider{
             height:100%;
@@ -163,4 +163,17 @@
             }
         }
     }
+
+    .cart{
+        position:absolute;
+        top:10px;
+        left:10px;
+        width:5%;
+        height:10%;
+        background-image:url('../images/shopping-cart.svg');
+        background-size:contain;
+        background-repeat:no-repeat;
+        cursor:pointer;
+    }
 }
+
