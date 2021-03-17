@@ -1,12 +1,16 @@
 import Slider from "react-slick";
 import {useState} from 'react';
+import {useDispatch} from 'react-redux';
+import {addProduct} from '../../actions/index'
 
-export const Carousel = ({choosenFood, addToCart}) =>{
+export const Carousel = ({choosenFood}) =>{
 
     const sushiPrice = 6;
     const ramenPrice = 8
     const prawnsPrice = 5;
     const setsPrice = 15;
+
+    const dispatch = useDispatch();
 
     const [products, setProducts] = useState(['product', 'product', 'product', 'product', 'product', 'product','product', 'product', 'product', 'product', 'product',])
 
@@ -17,6 +21,19 @@ export const Carousel = ({choosenFood, addToCart}) =>{
         slidesToShow: 4,
         slidesToScroll: 4
       };
+
+      const addToCart = (e) => {
+        const price = e.target.dataset.price;
+        const name = e.target.dataset.name;
+
+        const productData = {
+            price,
+            name,
+            quantity: 1
+        }
+
+        dispatch(addProduct(productData));
+    }
 
       if(choosenFood === 'Sushi rolls'){
         return (

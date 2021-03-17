@@ -1,23 +1,29 @@
 import {useEffect, useState} from 'react';
+import {quantityMinus} from '../actions/index'
+import {quantityPlus} from '../actions/index'
+import {useDispatch, useSelector} from 'react-redux';
 
-export const Checkout = ({hideCheckout, orderProducts, quantityMinus, quantityPlus}) => {
+
+export const Checkout = ({hideCheckout}) => {
 
     const [checkoutSum, setCheckoutSum] = useState(0);
+    const dispatch = useDispatch();
+    const order = useSelector(state => state.manageCheckoutReducer);
 
     useEffect(() => {
-        if(orderProducts.length > 0){
-            setCheckoutSum(orderProducts.map(value => value.price * value.quantity).reduce((a, b) => a + b))
+        if(order.length > 0){
+            setCheckoutSum(order.map(value => value.price * value.quantity).reduce((a, b) => a + b))
         }
-    },[orderProducts]);
+    },[order]);
 
     const changeQuantity = (e) => {
         const whichProduct = e.target.dataset.name;
         const removeOrAdd = e.target.innerHTML;
 
         if(removeOrAdd === '+'){
-            quantityPlus(whichProduct);
+            dispatch(quantityPlus(whichProduct));
         }else{
-            quantityMinus(whichProduct);
+            dispatch(quantityMinus(whichProduct));
         }
     }
 
@@ -26,11 +32,11 @@ export const Checkout = ({hideCheckout, orderProducts, quantityMinus, quantityPl
     } 
 
     
-    if(orderProducts.length > 0){
+    if(order.length > 0){
         return(
             <div className="orderToCheckout">
                 <div onClick={hideCheckout} className="hideCheckout"></div>
-                {orderProducts.map(value => {
+                {order.map(value => {
                     return(
                         <div className="checkoutProduct">
                             <div className="productImage">
