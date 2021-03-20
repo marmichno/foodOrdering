@@ -1,0 +1,29 @@
+.orderMainContainer{
+    .deliveryTimeContainer{
+        @include flexCenter();
+        flex-direction:column;
+        color:white;
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        padding:3rem;
+        border-bottom:2px solid $base-color;
+        border-right:2px solid $base-color;
+        background-color:#c3272c42;
+
+        h1{
+            font-size:5rem;
+            margin-bottom:3rem;
+        }
+        h2{
+            font-size:3rem;
+        }
+        p{
+            font-size:2.5rem;
+            letter-spacing:0.1rem;
+        }
+
+        button{
+            margin-top:2rem;
+            @include button();
+        }
+    }
+}

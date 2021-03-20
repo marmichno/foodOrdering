@@ -1,6 +1,7 @@
 import {Carousel} from './common/Carousel';
 import {Checkout} from './Checkout';
 import {useState, useEffect} from 'react';
+import {AiOutlineShoppingCart} from 'react-icons/ai';
 
 export const Order = () => {
 
@@ -30,7 +31,7 @@ export const Order = () => {
 
     return(
         <div className="orderMainContainer">
-            <div className="cart" onClick={checkout}></div>
+            <div className="cart" ><AiOutlineShoppingCart onClick={checkout}/></div>
             {showCheckout === true ? 
                 <Checkout hideCheckout={checkout}/>
              : null}
@@ -39,9 +40,7 @@ export const Order = () => {
                     return <h1 onClick={changeActive}>{value}</h1>
                 })}
             </div>
-            <div className="carouselContainer">
-                <Carousel choosenFood={choosenFood}/>
-            </div>
+            <Carousel choosenFood={choosenFood}/>
     </div>
     )
 }

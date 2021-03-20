@@ -1,0 +1,31 @@
+.chooseDeliveryContainer{
+    width:100vw;
+    height:100vh;
+    background-image:url("../images/background.JPG");
+    background-size:cover;
+    background-position:center;
+    background-attachment: fixed;
+    background-color:rgba(0, 0, 0, 0.6);
+    background-blend-mode:overlay;
+    @include flexCenter();
+    flex-direction:column;
+    text-align:center;
+
+    .chooseDeliveryTextContainer{
+        background-color:#c3272c42;
+        padding:3rem;
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        border-right: 2px solid $base-color;
+        border-bottom: 2px solid $base-color;
+
+        h1{
+            font-size:5rem;
+            color:white;
+        }
+
+        button{
+            @include button();
+            margin:2rem;
+        }
+    }
+}

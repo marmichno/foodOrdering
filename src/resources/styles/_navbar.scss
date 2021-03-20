@@ -6,14 +6,18 @@
     z-index:4;
 
     .navbarLogo{
-        background-image:url("../images/sushi.png");
         background-size:contain;
         background-repeat:no-repeat;
         height:100%;
-        margin:2rem;
-        padding:4rem;
+        padding:2rem;
         position:absolute;
         right:0;
         top:0;
+
+        .react-icons{
+            color: $base-color;
+            width:10em;
+            height:10em;
+        }
     }
 }

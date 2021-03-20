@@ -4,8 +4,16 @@
 @import './navbar';
 @import './order';
 @import './checkout';
+@import './chooseDelivery';
+@import './deliveryDetails';
+@import './delliveryTime';
+@import './contactUs';
 
 *{
     margin:0;
     padding:0;
+}
+
+.react-icons {
+    vertical-align: middle;
 }

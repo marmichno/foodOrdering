@@ -5,22 +5,14 @@ import {addProduct} from '../../actions/index'
 
 export const Carousel = ({choosenFood}) =>{
 
-    const sushiPrice = 6;
-    const ramenPrice = 8
-    const prawnsPrice = 5;
-    const setsPrice = 15;
+    const sushiPrice = 6.00;
+    const ramenPrice = 8.00
+    const prawnsPrice = 5.00;
+    const setsPrice = 15.00;
 
     const dispatch = useDispatch();
 
-    const [products, setProducts] = useState(['product', 'product', 'product', 'product', 'product', 'product','product', 'product', 'product', 'product', 'product',])
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 1000,
-        slidesToShow: 4,
-        slidesToScroll: 4
-      };
+    const [products, setProducts] = useState(['product', 'product', 'product', 'product', 'product', 'product','product', 'product', 'product', 'product', 'product',]);
 
       const addToCart = (e) => {
         const price = e.target.dataset.price;
@@ -35,105 +27,29 @@ export const Carousel = ({choosenFood}) =>{
         dispatch(addProduct(productData));
     }
 
-      if(choosenFood === 'Sushi rolls'){
-        return (
-            <Slider {...settings}>
+      return(
+        <div className="foodMainContainer">
               {products.map(value => {
-                return (<div className="sliderElement">
-                  <div>
-                    <div className="productImage">
-                    </div>
-                    <div className="productDetails">
-                      <div className="productHeader">
-                        <h2>Philadelphia roll</h2>
+                return (
+                  <div className="foodWrapper">
+                    <div className="foodContainer">
+                      <div className="productImage">
                       </div>
-                      <hr></hr>
-                      <div className="productIngredients">
-                        <p>Contains: rice, nori leaf, fresh salmon, philadeplhia cream, cucumber, avocado, sesam</p>
-                        <p><b>~ 6.00$</b></p>
+                      <div className="productDetails">
+                        <div className="productHeader">
+                          <h2>Philadelphia roll</h2>
+                        </div>
+                        <hr></hr>
+                        <div className="productIngredients">
+                          <p>Contains: rice, nori leaf, fresh salmon, philadeplhia cream, cucumber, avocado, sesam</p>
+                          <p><b>~ 6.00$</b></p>
+                        </div>
+                        <button data-price={sushiPrice} data-name={'Sushi rolls'} onClick={addToCart}>Order</button>
                       </div>
-                      <button data-price={sushiPrice} data-name={'Sushi rolls'} onClick={addToCart}>Order</button>
                     </div>
                   </div>
-                </div>
                 )
               })}
-            </Slider>
-        );
-    }else if(choosenFood === 'Ramen'){
-      return (
-        <Slider {...settings}>
-          {products.map(value => {
-            return (<div className="sliderElement">
-              <div>
-                <div className="productImage">
-                </div>
-                <div className="productDetails">
-                  <div className="productHeader">
-                    <h2>Ramen</h2>
-                  </div>
-                  <hr></hr>
-                  <div className="productIngredients">
-                    <p>Contains: rice, nori leaf, fresh salmon, philadeplhia cream, cucumber, avocado, sesam</p>
-                    <p><b>~ 6.00$</b></p>
-                  </div>
-                  <button data-price={ramenPrice} data-name='Ramen' onClick={addToCart}>Order</button>
-                </div>
-              </div>
-            </div>
-            )
-          })}
-        </Slider>
-      );
-    }else if(choosenFood === 'Prawns'){
-      return (
-        <Slider {...settings}>
-          {products.map(value => {
-            return (<div className="sliderElement">
-              <div>
-                <div className="productImage">
-                </div>
-                <div className="productDetails">
-                  <div className="productHeader">
-                    <h2>Prawns</h2>
-                  </div>
-                  <hr></hr>
-                  <div className="productIngredients">
-                    <p>Contains: rice, nori leaf, fresh salmon, philadeplhia cream, cucumber, avocado, sesam</p>
-                    <p><b>~ 6.00$</b></p>
-                  </div>
-                  <button data-price={prawnsPrice} data-name='Prawns' onClick={addToCart}>Order</button>
-                </div>
-              </div>
-            </div>
-            )
-          })}
-        </Slider>
-      );
-    }else if(choosenFood === 'Sets'){
-      return (
-        <Slider {...settings}>
-          {products.map(value => {
-            return (<div className="sliderElement">
-              <div>
-                <div className="productImage">
-                </div>
-                <div className="productDetails">
-                  <div className="productHeader">
-                    <h2>Sets</h2>
-                  </div>
-                  <hr></hr>
-                  <div className="productIngredients">
-                    <p>Contains: rice, nori leaf, fresh salmon, philadeplhia cream, cucumber, avocado, sesam</p>
-                    <p><b>~ 6.00$</b></p>
-                  </div>
-                  <button data-price={setsPrice} data-name='Sets' onClick={addToCart}>Order</button>
-                </div>
-              </div>
-            </div>
-            )
-          })}
-        </Slider>
-      );
-    }
+        </div>
+        )
 }

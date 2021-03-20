@@ -3,6 +3,11 @@ const manageCheckoutReducer = (state = localStorage.getItem('order'), action) =>
     const product = action.payload;
     state = JSON.parse(localStorage.getItem('order'));
 
+    
+    const alwaysTwoDecimals = (num) => {
+        return (Math.round(num * 100) / 100).toFixed(2);
+    }
+
     switch(action.type){
         
         case 'ADDPRODUCT':
@@ -68,6 +73,11 @@ const manageCheckoutReducer = (state = localStorage.getItem('order'), action) =>
 
             localStorage.setItem('order', JSON.stringify(state));
             return state;
+
+
+        case 'CHECKOUTSUM':
+
+            return state.map(value => value.price * value.quantity).reduce((a, b) => a + b);
 
             default:
                 return state;

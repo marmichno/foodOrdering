@@ -1,0 +1,71 @@
+.deliveryDetailsContainer{
+    width:100vw;
+    height:100vh;
+    background-image:url("../images/background.JPG");
+    background-size:cover;
+    background-position:center;
+    background-attachment: fixed;
+    background-color:rgba(0, 0, 0, 0.6);
+    background-blend-mode:overlay;
+    @include flexCenter();
+    flex-direction:column;
+    text-align:center;
+
+    .formContainer{
+        background-color:#c3272c42;
+        width:30%;
+        height:80%;
+        padding:3rem;
+        @include flexCenter();
+        flex-direction:column;
+        font-size:2rem;
+        color:white;
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        border-bottom:2px solid $base-color;
+        border-right:2px solid $base-color;
+
+        textarea{
+            resize: none;
+            width:80%;
+            font-size:1.5rem;
+            height:20%;
+            border-radius: 6px;
+            background-color:rgba(255, 255, 255, 0.9);
+        }
+
+        input{
+            width:70%;
+            height:4%;
+            text-align:center;
+            font-size:1.5rem;
+            margin-bottom:1rem;
+            border-radius: 6px;
+            outline:none;
+            border:none;
+            background-color:rgba(255, 255, 255, 0.9);
+        }
+
+        button{
+            margin:2rem;
+            margin-left:0;
+            @include button();
+        }
+
+        .nameContainer{
+            @include flexCenter();
+            width:80%;
+            margin-bottom:1rem;
+
+            div{
+                height:100%;
+                width:50%;
+
+                input{
+                    width:80%;
+                    height:35%;
+                }
+            }
+        }
+        
+    }
+}

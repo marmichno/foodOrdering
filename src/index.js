@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {createStore} from 'redux';
 import { Provider } from 'react-redux';
 import allReducers from './reducers/index';
+import {IconContext} from 'react-icons'
 
 const store = createStore(allReducers, 
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
@@ -13,7 +14,9 @@ const store = createStore(allReducers,
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <IconContext.Provider value={{ className: 'react-icons' }}>
+        <App />
+      </IconContext.Provider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
