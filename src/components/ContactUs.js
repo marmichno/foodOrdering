@@ -1,12 +1,31 @@
+import {motion} from 'framer-motion';
 import {
     withScriptjs,
     withGoogleMap,
     GoogleMap,
     Marker,
   } from "react-google-maps";
+import {AiFillPhone} from 'react-icons/ai'
+import {AiOutlineMail} from 'react-icons/ai'
 
-  import {AiFillPhone} from 'react-icons/ai'
-  import {AiOutlineMail} from 'react-icons/ai'
+const containerVariants = {
+  hidden: {
+      x: 2000
+  },
+  visible: {
+      x: 0,
+      transition: {
+        type: 'spring',
+        delay: 0.5,
+        mass: 1,
+        damping: 12
+      }
+  },
+  exit: {
+      x:'100vw',
+      transition: {ease: 'easeInOut', duration:0.5}
+  }
+}
 
 export const ContactUs = () => {
 
@@ -25,7 +44,12 @@ export const ContactUs = () => {
 
     return(
         <div className="orderMainContainer">
-            <div className="contactUsContainer">
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="contactUsContainer">
             <MapWithAMarker
             googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyDmpWYJAee_72ryefb9BT-aqcwF2Cbc_mY&v=3.exp&libraries=geometry,drawing,places'
             loadingElement={<div style={{ height: `100%` }} />}
@@ -36,7 +60,7 @@ export const ContactUs = () => {
                     <p><AiFillPhone/> 600 500 400</p>
                     <p><AiOutlineMail/> somemail@gmail.com</p>
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }

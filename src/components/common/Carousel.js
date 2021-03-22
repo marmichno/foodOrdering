@@ -2,6 +2,26 @@ import Slider from "react-slick";
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {addProduct} from '../../actions/index'
+import {motion} from 'framer-motion';
+
+const containerVariants = {
+  hidden: {
+      x: 2000
+  },
+  visible: {
+      x: 0,
+      transition: {
+        type: 'spring',
+        delay: 0.5,
+        mass: 1,
+        damping: 12
+      }
+  },
+  exit: {
+      x:'100vw',
+      transition: {ease: 'easeInOut', duration:0.5}
+  }
+}
 
 export const Carousel = ({choosenFood}) =>{
 
@@ -28,7 +48,12 @@ export const Carousel = ({choosenFood}) =>{
     }
 
       return(
-        <div className="foodMainContainer">
+        <motion.div className="foodMainContainer"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        >
               {products.map(value => {
                 return (
                   <div className="foodWrapper">
@@ -50,6 +75,6 @@ export const Carousel = ({choosenFood}) =>{
                   </div>
                 )
               })}
-        </div>
+        </motion.div>
         )
 }

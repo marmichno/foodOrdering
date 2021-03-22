@@ -13,6 +13,7 @@
 
     .foodHeadersContainer{
         @include flexCenter();
+        overflow:hidden;
 
         h1{
             font-size:6rem;
@@ -46,6 +47,7 @@
             @include flexCenter();
             width:100%;
             height:100%;
+            overflow:hidden;
 
             .foodContainer{
                 width:85%;

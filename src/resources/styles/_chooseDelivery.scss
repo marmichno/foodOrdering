@@ -10,6 +10,7 @@
     @include flexCenter();
     flex-direction:column;
     text-align:center;
+    overflow:hidden;
 
     .chooseDeliveryTextContainer{
         background-color:#c3272c42;
@@ -17,6 +18,7 @@
         box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         border-right: 2px solid $base-color;
         border-bottom: 2px solid $base-color;
+        overflow:hidden;
 
         h1{
             font-size:5rem;

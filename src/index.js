@@ -6,7 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import {createStore} from 'redux';
 import { Provider } from 'react-redux';
 import allReducers from './reducers/index';
-import {IconContext} from 'react-icons'
+import {IconContext} from 'react-icons';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 const store = createStore(allReducers, 
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
@@ -15,7 +16,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <IconContext.Provider value={{ className: 'react-icons' }}>
-        <App />
+      <Router>
+          <App />
+      </Router>
       </IconContext.Provider>
     </Provider>
   </React.StrictMode>,

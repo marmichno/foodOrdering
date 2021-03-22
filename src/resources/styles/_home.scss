@@ -6,6 +6,12 @@
     justify-content:flex-end;
     align-items:flex-end;
     overflow:hidden;
+    background-image:url("../images/background.JPG");
+    background-size:cover;
+    background-position:center;
+    background-attachment: fixed;
+    background-color:rgba(0, 0, 0, 0.6);
+    background-blend-mode:overlay;
 
     video{
         position:absolute;

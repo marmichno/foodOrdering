@@ -3,6 +3,25 @@ import {quantityMinus} from '../actions/index'
 import {quantityPlus} from '../actions/index'
 import {useDispatch, useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
+import {motion} from 'framer-motion';
+
+const containerVariants = {
+    hidden: {
+        x: -1000
+    },
+    visible: {
+        x: 0,
+        transition: {
+            type: 'tween',
+            duration: 1
+        }
+    },
+    exit: {
+        x:-1000,
+        transition: {ease: 'easeInOut', duration:0.5}
+    }
+  }
+
 
 
 export const Checkout = ({hideCheckout}) => {
@@ -31,39 +50,44 @@ export const Checkout = ({hideCheckout}) => {
     
     if(order.length > 0){
         return(
-            <div className="orderToCheckout">
-                <div onClick={hideCheckout} className="hideCheckout"></div>
-                {order.map(value => {
-                    return(
-                        <div className="checkoutProduct">
-                            <div className="productImage">
-                                <h1>{value.name}</h1>
-                            </div>
-                            <div className="productPriceData">
-                                <div>
-                                    <p>Price:{(value.price * value.quantity).toFixed(2)}$</p>
+                <motion.div 
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="orderToCheckout">
+                    <div onClick={hideCheckout} className="hideCheckout"></div>
+                    {order.map(value => {
+                        return(
+                            <div className="checkoutProduct">
+                                <div className="productImage">
+                                    <h1>{value.name}</h1>
                                 </div>
-                                <div>
-                                    <button onClick={changeQuantity} className="plus" data-name={value.name}>+</button>
-                                    <p>quantity:{value.quantity}</p>
-                                    <button onClick={changeQuantity} className="minus" data-name={value.name}>-</button>
+                                <div className="productPriceData">
+                                    <div>
+                                        <p>Price:{(value.price * value.quantity).toFixed(2)}$</p>
+                                    </div>
+                                    <div>
+                                        <button onClick={changeQuantity} className="plus" data-name={value.name}>+</button>
+                                        <p>quantity:{value.quantity}</p>
+                                        <button onClick={changeQuantity} className="minus" data-name={value.name}>-</button>
+                                    </div>
                                 </div>
                             </div>
+                        )
+                    })}
+                    <div className="checkoutSum">
+                        <div>
+                            <hr></hr>
                         </div>
-                    )
-                })}
-                <div className="checkoutSum">
-                    <div>
-                        <hr></hr>
+                        <h1>Subtotal: {checkoutSum.toFixed(2)}$</h1>
+                        <Link to={{
+                            pathname:'/order/choose_delivery'
+                        }}>
+                            <button>Go to order details</button>
+                        </Link>
                     </div>
-                    <h1>Subtotal: {checkoutSum.toFixed(2)}$</h1>
-                    <Link to={{
-                        pathname:'/order/choose_delivery'
-                    }}>
-                        <button>Go to order details</button>
-                    </Link>
-                </div>
-            </div>
+                </motion.div>
         )
 
     }else{

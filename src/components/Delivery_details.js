@@ -1,10 +1,35 @@
 import {Link} from 'react-router-dom';
+import {motion} from 'framer-motion';
+
+const containerVariants = {
+  hidden: {
+      x: 2000
+  },
+  visible: {
+      x: 0,
+      transition: {
+        type: 'spring',
+        delay: 0.5,
+        mass: 1,
+        damping: 12
+      }
+  },
+  exit: {
+      x:'100vw',
+      transition: {ease: 'easeInOut', duration:0.5}
+  }
+}
 
 export const Delivery_details = () => {
 
     return(
         <div className="deliveryDetailsContainer">
-            <div className="formContainer">
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit" 
+                className="formContainer">
                 <div className="nameContainer">
                     <div>
                         <label for="firstName">
@@ -51,7 +76,7 @@ export const Delivery_details = () => {
                 }}>
                 <button>Confirm order details</button>
                 </Link>
-            </div>
+            </motion.div>
         </div>
     )   
 }

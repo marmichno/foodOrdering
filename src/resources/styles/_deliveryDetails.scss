@@ -10,6 +10,7 @@
     @include flexCenter();
     flex-direction:column;
     text-align:center;
+    overflow:hidden;
 
     .formContainer{
         background-color:#c3272c42;
