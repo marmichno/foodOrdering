@@ -1,7 +1,5 @@
 import {Carousel} from './common/Carousel';
-import {Checkout} from './Checkout';
 import {useState, useEffect} from 'react';
-import {AiOutlineShoppingCart} from 'react-icons/ai';
 import {motion, AnimatePresence} from 'framer-motion';
 
 const containerVariants = {
@@ -28,7 +26,6 @@ export const Order = () => {
     const [currentActive, setCurrentActive] = useState(null);
     const foodTypes = ['Sushi rolls', 'Ramen', 'Prawns', 'Sets'];
     const [choosenFood, setChoosenFood] = useState('Sushi rolls');
-    const [showCheckout, setShowCheckout] = useState(false);
 
     useEffect(() =>{
         const allHeaders = document.querySelectorAll('.foodHeadersContainer h1');
@@ -45,18 +42,8 @@ export const Order = () => {
         setChoosenFood(e.target.innerHTML);
     }
 
-    const checkout = () => {
-        setShowCheckout(!showCheckout);
-    }
-
     return(
         <div className="orderMainContainer">
-            <div className="cart" ><AiOutlineShoppingCart onClick={checkout}/></div>
-            <AnimatePresence>
-            {showCheckout === true ? 
-                <Checkout hideCheckout={checkout}/>
-             : null}
-            </AnimatePresence>
             <motion.div
             variants={containerVariants}
             initial="hidden"

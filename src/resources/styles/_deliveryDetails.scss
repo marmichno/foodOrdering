@@ -13,17 +13,14 @@
     overflow:hidden;
 
     .formContainer{
-        background-color:#c3272c42;
+        background-color:$background-color;
+        box-shadow: 94px 94px 0px -87px $base-color;
         width:30%;
         height:80%;
         padding:3rem;
         @include flexCenter();
         flex-direction:column;
         font-size:2rem;
-        color:white;
-        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-        border-bottom:2px solid $base-color;
-        border-right:2px solid $base-color;
 
         textarea{
             resize: none;
@@ -44,6 +41,7 @@
             outline:none;
             border:none;
             background-color:rgba(255, 255, 255, 0.9);
+            border: 1px solid black;
         }
 
         button{

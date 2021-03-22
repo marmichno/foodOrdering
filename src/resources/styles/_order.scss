@@ -55,9 +55,7 @@
                 @include flexCenter();
                 justify-content:flex-start;
                 flex-direction:column;
-                box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-                border-bottom:2px solid $base-color;
-                border-right:2px solid $base-color;
+                box-shadow: 94px 94px 0px -87px $base-color;
                 
                 .productImage{
                     background-image:url("../images/food/philadelphia.jpg");
@@ -74,8 +72,7 @@
 
                 .productDetails{
                     height:60%;
-                    background-color:#c3272c42;
-                    color:white;
+                    background-color:$background-color;
                     font-size:1.2rem;
                     border-bottom-left-radius: 5px;
                     border-bottom-right-radius: 5px;
@@ -123,20 +120,6 @@
                     height:100%;
                 }
             }
-        }
-    }
-
-    .cart{
-        position:absolute;
-        top:0px;
-        left:0px;
-        padding:2rem;
-        cursor:pointer;
-
-        .react-icons{
-            width:8em;
-            height:8em;
-            color:$base-color;
         }
     }
 }
