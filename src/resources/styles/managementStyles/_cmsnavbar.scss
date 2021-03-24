@@ -1,0 +1,20 @@
+.cmsNavbar{
+    width:17.5%;
+    height:100%;
+    @include flexCenter();
+    flex-direction:column;
+    background-image:url("../../images/background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment: fixed;
+    background-color:rgba(0, 0, 0, 0.8);
+    background-blend-mode:overlay;
+    overflow:hidden;
+    @include flexCenter();
+    box-shadow: 3px 2px 41px -2px rgba(0,0,0,0.5);
+
+    h1{
+        margin-bottom:3rem;
+        color:white;
+    }
+}

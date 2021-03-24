@@ -7,7 +7,10 @@ import {Navbar} from './components/Navbar';
 import {Delivery_details} from './components/Delivery_details';
 import {DeliveryTime} from './components/Delivery_time';
 import {ContactUs} from './components/ContactUs';
-import {ManagementLogin} from './managementComponents/ManagementLogin';
+import {CmsLogin} from './managementComponents/CmsLogin';
+import {CmsMainPage} from './managementComponents/CmsMainPage';
+import {CmsProductsManagement} from './managementComponents/CmsProductsManagement';
+import {CmsEmployees} from './managementComponents/CmsEmployees';
 import {BrowserRouter as Router, Switch, Route, useLocation} from 'react-router-dom';
 import {AnimatePresence} from 'framer-motion';
 
@@ -26,7 +29,10 @@ function App() {
           <Route exact path='/order/choose_delivery/' component={Choose_delivery}></Route>
           <Route exact path='/order/choose_delivery/delivery_details' component={Delivery_details}></Route>
           <Route exact path='/order/choose_delivery/delivery_details/delivery_time' component={DeliveryTime}></Route>
-          <Route exact path='/managementLogin' component={ManagementLogin}></Route>
+          <Route exact path='/cmsLogin' component={CmsLogin}></Route>
+          <Route exact path='/cmsLogin/cms' component={CmsMainPage}></Route>
+          <Route exact path="/cmsLogin/cms/productManagement" component={CmsProductsManagement}></Route>
+          <Route exact path="/cmsLogin/cms/employees" component={CmsEmployees}></Route>
         </Switch>
       </AnimatePresence>
     </>

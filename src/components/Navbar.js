@@ -45,6 +45,7 @@ export const Navbar = () => {
     const location = window.location.href;
     const [showCheckout, setShowCheckout] = useState(false);
     const [quantityNumber, setQuantityNumber] = useState(0);
+    const [showNavbar, setShowNavbar] = useState(true);
 
     useEffect(() => {
         if(order.length > 0){
@@ -60,37 +61,48 @@ export const Navbar = () => {
 
     useEffect(() => {
         setShowCheckout(false);
+
+        if(location.search('cms') === -1){
+            setShowNavbar(true);
+        }else{
+            setShowNavbar(false);
+        }
+
     },[location])
 
     return(
         <>
-        <div className="navbar">
-            <AnimatePresence>
-            {location === 'http://localhost:3000/order' || location === 'http://localhost:3000/order/choose_delivery' || location === 'http://localhost:3000/order/choose_delivery/delivery_details'  ?
-                <motion.div
-                variants={cartVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                className="cart" >
-                <div onClick={checkout}>
-                    <AiOutlineShoppingCart></AiOutlineShoppingCart>
-                    <h1>{quantityNumber}</h1>
+            {showNavbar ?
+            <>
+                <div className="navbar">
+                    <AnimatePresence>
+                    {location === 'http://localhost:3000/order' || location === 'http://localhost:3000/order/choose_delivery' || location === 'http://localhost:3000/order/choose_delivery/delivery_details'  ?
+                        <motion.div
+                        variants={cartVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        className="cart" >
+                        <div onClick={checkout}>
+                            <AiOutlineShoppingCart></AiOutlineShoppingCart>
+                            <h1>{quantityNumber}</h1>
+                        </div>
+                        </motion.div>
+                    : null}
+                    </AnimatePresence>
+                    <motion.div
+                    variants={logoVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="navbarLogo"><p>Sushi sakana</p><GiSushis /></motion.div>
                 </div>
-                </motion.div>
+                <AnimatePresence>
+                    {showCheckout === true ? 
+                    <Checkout hideCheckout={checkout}/>
+                    : null}
+                </AnimatePresence>
+            </>
             : null}
-            </AnimatePresence>
-            <motion.div
-            variants={logoVariants}
-            initial="hidden"
-            animate="visible"
-            className="navbarLogo"><p>Sushi sakana</p><GiSushis /></motion.div>
-        </div>
-        <AnimatePresence>
-            {showCheckout === true ? 
-            <Checkout hideCheckout={checkout}/>
-            : null}
-        </AnimatePresence>
         </>
     )
 }
