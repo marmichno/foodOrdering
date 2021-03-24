@@ -7,7 +7,8 @@
 
 This app will contain: 
 - food ordering landing page made for restaurants
-- CMS for shop manager (adding products, promotions, employees management).
+- CMS for shop manager (adding products, promotions, sales data, employees management)
+- Order management for employees (reciving and handling orders with live preview)
 
 ## Tech
 
