@@ -29,7 +29,7 @@ const containerVariants = {
 
 export const ContactUs = () => {
 
-    const API_KEY = 'AIzaSyDmpWYJAee_72ryefb9BT-aqcwF2Cbc_mY';
+    const API_KEY = 'AIzaSyDRXfjVnwZKwIiSiefqGhCrRWUr8f3PzP0';
 
     const MapWithAMarker = withScriptjs(withGoogleMap(props =>
         <GoogleMap

@@ -72,11 +72,11 @@ export const Home = () => {
                     }}>
                         <button>Order Online</button>
                     </Link>
-                    <motion.button
-                    variants={buttonVariants}
-                    whileHover="hover"
-                    >Contact Us</motion.button>
-                    <button>Make reservation</button>
+                    <Link to={{
+                        pathname:'/contact_us'
+                    }}>
+                        <button>Contact Us</button>
+                    </Link>
                 </motion.div>
             </motion.div>
          </div>

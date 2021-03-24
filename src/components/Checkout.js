@@ -4,6 +4,7 @@ import {quantityPlus} from '../actions/index'
 import {useDispatch, useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {motion} from 'framer-motion';
+import {IoIosAddCircleOutline} from 'react-icons/io'
 
 const containerVariants = {
     hidden: {
@@ -92,9 +93,19 @@ export const Checkout = ({hideCheckout}) => {
 
     }else{
         return(
-            <div className="orderToCheckout">
-                <div onClick={hideCheckout}>hide</div>
-            </div>
+            <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="orderToCheckout">
+                <IoIosAddCircleOutline className="x" onClick={hideCheckout}/>
+                <div className="emptyContainer" onClick={hideCheckout}>
+                    <h1>Your cart is empty :(</h1>
+                    <hr></hr>
+                    <p>add something to cart to continue</p>
+                </div>
+            </motion.div>
         )
     }
 }

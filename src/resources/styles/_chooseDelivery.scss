@@ -1,11 +1,11 @@
 .chooseDeliveryContainer{
     width:100vw;
     height:100vh;
-    background-image:url("../images/background.JPG");
+    background-image:url("../images/background.jpg");
     background-size:cover;
     background-position:center;
     background-attachment: fixed;
-    background-color:rgba(0, 0, 0, 0.6);
+    background-color:rgba(0, 0, 0, 0.8);
     background-blend-mode:overlay;
     @include flexCenter();
     flex-direction:column;

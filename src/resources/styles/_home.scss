@@ -6,11 +6,11 @@
     justify-content:flex-end;
     align-items:flex-end;
     overflow:hidden;
-    background-image:url("../images/background.JPG");
+    background-image:url("../images/background.jpg");
     background-size:cover;
     background-position:center;
     background-attachment: fixed;
-    background-color:rgba(0, 0, 0, 0.6);
+    background-color:rgba(0, 0, 0, 0.8);
     background-blend-mode:overlay;
 
     video{
@@ -44,21 +44,21 @@
 
         hr{
             border: 0;
-            height: 2px;
+            height: 4px;
             background: $base-color;
             width:100%;
-            margin:1rem;
+            margin:2rem;
             max-width:700px;
         }
         h1{
             font-size:4rem;
             letter-spacing:0.2rem;
-            line-height:4.4rem;
+            line-height:5rem;
         }
         p{
-            font-size:1.34rem;
+            font-size:1.5rem;
             padding-bottom:1rem;
-            max-width:700px; 
+            max-width:640px; 
             line-height:1.6rem;
         }
 

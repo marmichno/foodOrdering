@@ -1,11 +1,11 @@
 .orderMainContainer{
     width:100vw;
     height:100vh;
-    background-image:url("../images/background.JPG");
+    background-image:url("../images/background.jpg");
     background-size:cover;
     background-position:center;
     background-attachment: fixed;
-    background-color:rgba(0, 0, 0, 0.6);
+    background-color:rgba(0, 0, 0, 0.8);
     background-blend-mode:overlay;
     overflow:hidden;
     @include flexCenter();
@@ -31,8 +31,8 @@
     }
 
     .foodMainContainer{
-        width:90%;
-        height:80%;
+        width:80%;
+        height:70%;
         display:grid;
         grid-template-columns:repeat(3, 1fr);
         grid-auto-rows:95%;
@@ -84,14 +84,14 @@
                         padding:1rem;
                         @include flexCenter();
 
-                        h2{
-                            font-size:2.5rem;
+                        h1{
+                            font-size:1.9rem;
                             letter-spacing:0.2rem;
                         }
                     }
                     hr{
                         border: 0;
-                        height: 3px;
+                        height: 4px;
                         background: $base-color;
                         width:40%;
                         margin-bottom:1rem;
@@ -103,6 +103,10 @@
                         width:80%;
                         height:50%;
                         font-size:1.6rem;
+
+                        h1{
+                            font-size:1.5rem;
+                        }
                     }
 
                     button{

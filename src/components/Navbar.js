@@ -3,6 +3,7 @@ import {Checkout} from './Checkout';
 import {AiOutlineShoppingCart} from 'react-icons/ai';
 import {motion, AnimatePresence} from 'framer-motion';
 import {useState, useEffect} from 'react';
+import {useSelector} from 'react-redux';
 
 const logoVariants = {
     hidden: {
@@ -40,9 +41,18 @@ const cartVariants = {
 
 export const Navbar = () => {
 
+    const order = useSelector(state => state.manageCheckoutReducer);
     const location = window.location.href;
-
     const [showCheckout, setShowCheckout] = useState(false);
+    const [quantityNumber, setQuantityNumber] = useState(0);
+
+    useEffect(() => {
+        if(order.length > 0){
+            setQuantityNumber(order.map(value => value.quantity).reduce((a, b) => a + b));
+        }else{
+            setQuantityNumber(0);
+        }
+    },[order])
     
     const checkout = () => {
         setShowCheckout(!showCheckout);
@@ -63,7 +73,10 @@ export const Navbar = () => {
                 animate="visible"
                 exit="exit"
                 className="cart" >
-                <AiOutlineShoppingCart onClick={checkout}/>
+                <div onClick={checkout}>
+                    <AiOutlineShoppingCart></AiOutlineShoppingCart>
+                    <h1>{quantityNumber}</h1>
+                </div>
                 </motion.div>
             : null}
             </AnimatePresence>

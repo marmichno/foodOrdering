@@ -1,0 +1,35 @@
+.managementLoginMainContainer{
+    width:100vw;
+    height:100vh;
+    @include flexCenter();
+    background-color:$mainContainerBackgroudColor;
+
+    .loginBox{
+        background-color:$background-color;
+        box-shadow: 94px 94px 0px -87px $base-color;
+        padding:2rem;
+        @include flexCenter();
+        flex-direction:column;
+        height:30%;
+        width:30%;
+        font-size:2rem;
+        border-radius:4px;
+
+        button{
+            @include button();
+        }
+
+        input{
+            width:70%;
+            height:20%;
+            text-align:center;
+            font-size:1.5rem;
+            margin-bottom:1rem;
+            border-radius: 6px;
+            outline:none;
+            border:none;
+            background-color:rgba(255, 255, 255, 0.9);
+            border: 1px solid black;
+        }
+    }
+}

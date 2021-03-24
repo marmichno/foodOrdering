@@ -10,8 +10,15 @@
 
     .cart{
         cursor:pointer;
-        position:absolute;
-        left:0;
+
+        div{
+            @include flexCenter();
+
+            h1{
+                font-size:3rem;
+                color:white;
+            }
+        }
 
         .react-icons{
             width:5em;
@@ -33,12 +40,12 @@
         padding-right:1rem;
         border:2px solid $base-color;
         border-right:none;
-        box-shadow: 0px 7px 22px 10px rgba(0,0,0,0.75);
+        box-shadow: 0px 7px 22px 10px rgba(0,0,0,0.45);
 
         p{
             font-size:2rem;
             color:white;
-            line-height:1.4rem;
+            line-height:1.6rem;
         }
 
         .react-icons{
