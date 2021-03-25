@@ -37,7 +37,11 @@ export const CmsNavbar = () => {
                 }}>
                     <h1>Employees</h1>
                 </Link>
+                <Link to={{
+                        pathname:'/cmsLogin/cms/employeesSchedule'
+                }}>
                 <h1>Schedule</h1>
+                </Link>
             </div>
             : null}
         </>

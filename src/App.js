@@ -11,6 +11,7 @@ import {CmsLogin} from './managementComponents/CmsLogin';
 import {CmsMainPage} from './managementComponents/CmsMainPage';
 import {CmsProductsManagement} from './managementComponents/CmsProductsManagement';
 import {CmsEmployees} from './managementComponents/CmsEmployees';
+import {CmsEmployeesSchedule} from './managementComponents/CmsEmployeeSchedule';
 import {BrowserRouter as Router, Switch, Route, useLocation} from 'react-router-dom';
 import {AnimatePresence} from 'framer-motion';
 
@@ -33,6 +34,7 @@ function App() {
           <Route exact path='/cmsLogin/cms' component={CmsMainPage}></Route>
           <Route exact path="/cmsLogin/cms/productManagement" component={CmsProductsManagement}></Route>
           <Route exact path="/cmsLogin/cms/employees" component={CmsEmployees}></Route>
+          <Route exact path="/cmsLogin/cms/employeesSchedule" component={CmsEmployeesSchedule}></Route>
         </Switch>
       </AnimatePresence>
     </>
