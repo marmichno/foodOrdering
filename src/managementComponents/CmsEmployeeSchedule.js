@@ -51,6 +51,26 @@ export const CmsEmployeesSchedule = () =>{
         <div className="cmsEmployeesScheduleContainer">
             <CmsNavbar/>
             <div className="cmsEmployeesScheduleContent">
+                <div className="shiftsContainer">
+                    <div className="shiftsInfoContainer">
+                        <div className="shiftInfo"><h1>1 - 06:00 - 14:00</h1></div>
+                        <div className="shiftInfo"><h1>2 - 07:00 - 15:00</h1></div>
+                        <div className="shiftInfo"><h1>3 - 08:30 - 16:30</h1></div>
+                        <div className="shiftInfo"><h1>4 - 13:40 - 21:40</h1></div>
+                        <div className="shiftInfo"><h1>5 - 15:00 - 23:00</h1></div>
+                        <div className="shiftInfo"><h1>6 - 16:30 - 00:30</h1></div>
+                        <div className="shiftInfo"><h1>6 - 16:30 - 00:30</h1></div>
+                        <div className="shiftInfo"><h1>6 - 16:30 - 00:30</h1></div>
+                        <div className="shiftInfo"><h1>6 - 16:30 - 00:30</h1></div>
+                        <div className="shiftInfo"><h1>6 - 16:30 - 00:30</h1></div>
+                        <div className="shiftInfo"><h1>6 - 16:30 - 00:30</h1></div>
+                    </div>
+                    <div className="addShifts">
+                        <input type="text" placeholder="hour range ex: 16:30-24:30" autocomplete="off" name="category" required></input>
+                        <input className="shiftId" type="number" placeholder="shift id ex: 1" autocomplete="off" name="category" required></input>
+                        <button>add new shift</button>
+                    </div>
+                </div>
                 <div className="calendarContainer">
                     {employees.map(employee => {
                         return(

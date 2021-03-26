@@ -69,6 +69,7 @@
                     
                     button{
                         @include button();
+                        margin-right:1rem;
                     }
                 }
 

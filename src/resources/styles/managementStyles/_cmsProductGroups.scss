@@ -1,0 +1,62 @@
+.productGroupsMainContainer{
+    width:100vw;
+    height:100vh;
+    @include flexCenter();
+
+    .productGroupsContent{
+        width:100%;
+        height:100%;
+        overflow-y:scroll;
+
+        .groupRow{
+            display:grid;
+            grid-template-columns:25% 25% 25% 25%;
+            height:10%;
+            text-align:center;
+
+            div{
+                @include flexCenter();
+            }
+
+            &:nth-child(even){
+                box-shadow: 2px 0px 21px -6px rgba(0,0,0,0.75);
+            }
+
+            h1{
+                color:$base-color;
+            }
+
+            button{
+                @include button();
+                margin-right:1rem;
+            }
+
+            p{
+                font-size:1.3rem;
+            }
+        }
+
+        .addGroupContainer{
+            height:10%;
+            @include flexCenter();
+            box-shadow: 2px 0px 21px -6px rgba(0,0,0,0.75);
+
+            button{
+                @include button();
+            }
+
+            input{
+                width:30%;
+                height:50%;
+                text-align:center;
+                font-size:1.5rem;
+                border-radius: 6px;
+                outline:none;
+                border:none;
+                background-color:rgba(255, 255, 255, 0.9);
+                border: 1px solid black;
+                margin-right:2rem;
+            }
+        }
+    }
+}

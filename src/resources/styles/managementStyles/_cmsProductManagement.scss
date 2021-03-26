@@ -9,12 +9,30 @@
         overflow-y:scroll;
 
         &:nth-child(1){
-            background-color:gray;
+            background-color:rgb(61, 58, 58);
+        }
+
+        .searchBar{
+            @include flexCenter();
+            height:10%;
+
+            input{
+                width:20%;
+                height:50%;
+                text-align:center;
+                font-size:1.5rem;
+                border-radius: 6px;
+                outline:none;
+                border:none;
+                background-color:rgba(255, 255, 255, 0.9);
+                border: 2px solid black;
+                margin-right:2rem;
+            }
         }
 
         .productRow{
             display:grid;
-            grid-template-columns:5% 25% 20% 25% 15% 10%;
+            grid-template-columns:5% 25% 20% 20% 12.5% 17.5%;
             height:10%;
             text-align:center;
 
@@ -60,6 +78,12 @@
             &:nth-child(even){
                 box-shadow: 2px 0px 21px -6px rgba(0,0,0,0.75);
             }
+
+            .addButton{
+                button{
+                    margin-right:0rem;
+                }
+            }
             
             div{
                 @include flexCenter();
@@ -68,6 +92,7 @@
 
                 button{
                     @include button();
+                    margin-right:1rem;
                 }
 
                 h1{

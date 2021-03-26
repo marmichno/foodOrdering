@@ -8,6 +8,7 @@
 @import './deliveryDetails';
 @import './delliveryTime';
 @import './contactUs';
+@import './managementStyles/cmsPromotions';
 
 h1{
     font-family: 'Merienda', cursive;
@@ -16,6 +17,10 @@ h1{
 *{
     margin:0;
     padding:0;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 body{

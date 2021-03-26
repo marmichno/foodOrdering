@@ -40,7 +40,7 @@ export const CmsEmployees = () => {
                         <div><p>Chef</p></div>
                         <div><p>mdyl</p></div>
                         <div><p>-</p></div>
-                        <div><button>Modify</button></div>
+                        <div><button>Modify</button><button>Delete</button></div>
                     </div>
                    ) 
                 })}
