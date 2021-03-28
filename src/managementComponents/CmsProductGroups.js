@@ -1,8 +1,30 @@
 import {CmsNavbar} from './CmsNavbar';
+import {useEffect, useState} from 'react';
+import {groupPostRequest} from '../requests/groupPostRequest';
+import {groupGetRequest} from '../requests/groupGetRequest';
 
 export const CmsProductGroups = () =>{
 
-    const groups = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    const [groups, setGroups] = useState([]);
+    const [inputValue, setInputValue] = useState("");
+
+    useEffect(() => {
+        getGroups();
+    },[]);
+
+    const getGroups = async () =>{
+        const response = await groupGetRequest();
+        setGroups(response);
+    }
+    
+    const saveInputValue = (e) =>{
+        setInputValue(e.target.value);
+    }
+
+    const addGroup = async () =>{
+        const response = await groupPostRequest(inputValue);
+        getGroups();
+    }
 
     return(
         <div className="productGroupsMainContainer">
@@ -16,19 +38,24 @@ export const CmsProductGroups = () =>{
                 </div>
 
                 <div className="addGroupContainer">
-                    <input type="text" placeholder="group name" autocomplete="off" name="category" required></input><button>Add product group</button>
+                    <input onChange={saveInputValue} type="text" placeholder="group name" autocomplete="off" name="category" required></input>
+                    <button onClick={addGroup}>Add product group</button>
                 </div>
 
-                {groups.map(value => {
-                    return(
-                        <div className="groupRow">
-                            <div><p>1</p></div>
-                            <div><p>Sushi rolls</p></div>
-                            <div><p>26</p></div>
-                            <div><button>modify</button><button>delete</button></div>
-                        </div>
-                    )
-                })}
+                {
+                groups !== undefined ?
+                    groups.map(value => {
+                        return(
+                            <div className="groupRow">
+                                <div>{value.id}</div>
+                                <div><p>{value.name}</p></div>
+                                <div><p>26</p></div>
+                                <div><button>modify</button><button>delete</button></div>
+                            </div>
+                        )
+                    })
+                : null
+                }
 
             </div>
         </div>

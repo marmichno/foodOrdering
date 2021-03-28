@@ -1,4 +1,3 @@
-import Slider from "react-slick";
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {addProduct} from '../../actions/index'
