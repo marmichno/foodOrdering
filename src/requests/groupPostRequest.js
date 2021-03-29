@@ -2,6 +2,8 @@ import axios from 'axios';
 
 export const groupPostRequest = async (name) => {
 
+    console.log(name);
+
     const config = {
         headers: {
             "Content-Type":"application/json"
