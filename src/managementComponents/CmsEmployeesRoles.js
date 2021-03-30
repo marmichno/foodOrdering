@@ -5,7 +5,7 @@ import {employeesRolesPostRequest} from '../requests/employeesRolesPostRequest';
 
 export const CmsEmployeesRoles = () =>{
 
-    const [roles, setRoles] = useState("");
+    const [roles, setRoles] = useState([]);
     const [roleName, setRoleName] = useState("");
 
     useEffect(() =>{
@@ -44,7 +44,7 @@ export const CmsEmployeesRoles = () =>{
                 roles !== undefined ?
                     roles.map(value => {
                         return(
-                            <div className="groupRole">
+                            <div className="roleRow">
                                 <div><p>{value.id}</p></div>
                                 <div><p>{value.name}</p></div>
                                 <div><p>123</p></div>

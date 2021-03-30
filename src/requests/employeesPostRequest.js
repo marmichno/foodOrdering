@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const employeesPostRequest = async (employee) => {
+export const employeesPostRequest = async (employee) => {
+    console.log(employee);
+
     const config = {
         headers:{
             "Content-Type":"application/json"

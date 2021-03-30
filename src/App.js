@@ -40,7 +40,7 @@ function App() {
           <Route exact path="/cmsLogin/cms/employeesSchedule" component={CmsEmployeesSchedule}></Route>
           <Route exact path="/cmsLogin/cms/promotions" component={CmsPromotions}></Route>
           <Route exact path="/cmsLogin/cms/productGroups" component={CmsProductGroups}></Route>
-          <Route exact path="cmsLogin/cms/employeesRoles" component={CmsEmployeesRoles}></Route>
+          <Route exact path="/cmsLogin/cms/employeesRoles" component={CmsEmployeesRoles}></Route>
         </Switch>
       </AnimatePresence>
     </>

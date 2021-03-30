@@ -2,20 +2,50 @@ import {CmsNavbar} from './CmsNavbar';
 import {useEffect, useState} from 'react';
 import {employeesGetRequest} from '../requests/employeesGetRequest';
 import {employeesPostRequest} from '../requests/employeesPostRequest';
+import {employeesRolesGetRequest} from '../requests/employeesRolesGetRequest';
 
 export const CmsEmployees = () => {
 
+    const [employees, setEmployees] = useState([]);
+    const [employeesRoles, setEmployeesRoles] = useState([]);
     const [employeeFirstName, setEmployeeFirstName] = useState("");
     const [employeeLastName, setEmployeeLastName] = useState("");
     const [employeePhoneNumber, setEmployeePhoneNumber] = useState("");
     const [employeeRole, setEmployeeRole] = useState("");
     const [employeeLogin, setEmployeeLogin] = useState("");
-    const [employeePasword, setEmployeePasword] = useState("");
+    const [employeePassword, setEmployeePassword] = useState("");
+
+    useEffect(() => {
+        employeesRolesGet();
+        employeesGet();
+    },[])
+
+    const employeesGet = async () =>{
+        const response = await employeesGetRequest();
+        setEmployees(response);
+    }
+    
+    const employeesRolesGet = async () =>{
+        const response = await employeesRolesGetRequest();
+        setEmployeesRoles(response);
+    }
+
+    const employeesPost = async () =>{
+        const response = await employeesPostRequest({
+            "firstName":employeeFirstName,
+            "surname":employeeLastName,
+            "phoneNumber":employeePhoneNumber,
+            "login":employeeLogin,
+            "password":employeePassword,
+            "role":employeeRole
+        });
+        employeesGet();
+    }
 
     return(
         <div className="cmsEmployeesContainer">
             <CmsNavbar/>
-            {/* <div className="cmsEmployeesContent">
+            <div className="cmsEmployeesContent">
                 <div className="employeeRow">
                     <div><h1>Id</h1></div>
                     <div><h1>First name</h1></div>
@@ -33,30 +63,39 @@ export const CmsEmployees = () => {
                     <div onChange={(e) => setEmployeeLastName(e.target.value)} className="addInput"><input type="text" placeholder="Dyl" autocomplete="off" name="category" required></input></div>
                     <div onChange={(e) => setEmployeePhoneNumber(e.target.value)} className="addInput"><input type="text" placeholder="123-245-638" autocomplete="off" name="category"></input></div>
                     <div className="addInput">
-                        <select>
-                            <option>Sushi Chef</option><option>Chef</option><option>Waiter</option><option>Manager</option>
+                        <select onChange={(e) => setEmployeeRole(employeesRoles.filter(value => value.name === e.target.value ? true : false)[0])}>
+                            {employeesRoles !== undefined ?
+                                employeesRoles.map(value => {
+                                    return <option>{value.name}</option>
+                                })
+                            : null
+                            }
                         </select>
                     </div>
                     <div onChange={(e) => setEmployeeLogin(e.target.value)} className="addInput"><input type="text" placeholder="Login" autocomplete="off" name="category" required></input></div>
                     <div onChange={(e) => setEmployeePassword(e.target.value)} className="addInput"><input type="password" placeholder="password" autocomplete="off" name="category" required></input></div>
-                    <div><button>Add</button></div>
+                    <div><button onClick={employeesPost}>Add</button></div>
                 </div>
 
-                {employees.map(value => {
-                   return(
-                    <div className="employeeRow">
-                        <div><p>9</p></div>
-                        <div><p>Marcin</p></div>
-                        <div><p>Dyl</p></div>
-                        <div><p>123-234-234</p></div>
-                        <div><p>Chef</p></div>
-                        <div><p>mdyl</p></div>
-                        <div><p>-</p></div>
-                        <div><button>Modify</button><button>Delete</button></div>
-                    </div>
-                   ) 
-                })}
-            </div> */}
+                {
+                employees !== undefined ?
+                    employees.map(value => {
+                    return(
+                        <div className="employeeRow">
+                            <div><p>{value.id}</p></div>
+                            <div><p>{value.firstName}</p></div>
+                            <div><p>{value.surname}</p></div>
+                            <div><p>{value.phoneNumber}</p></div>
+                            <div><p>{value.role.name}</p></div>
+                            <div><p>{value.login}</p></div>
+                            <div><p>-</p></div>
+                            <div><button>Modify</button><button>Delete</button></div>
+                        </div>
+                    ) 
+                    })
+                : null
+                }
+            </div>
         </div>
     )
 }
