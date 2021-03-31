@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react';
 import {employeesGetRequest} from '../requests/employeesGetRequest';
 import {employeesPostRequest} from '../requests/employeesPostRequest';
 import {employeesRolesGetRequest} from '../requests/employeesRolesGetRequest';
+import {employeesDeleteRequest} from '../requests/employeesDeleteRequest';
 
 export const CmsEmployees = () => {
 
@@ -27,6 +28,7 @@ export const CmsEmployees = () => {
     
     const employeesRolesGet = async () =>{
         const response = await employeesRolesGetRequest();
+        setEmployeeRole(response[0]);
         setEmployeesRoles(response);
     }
 
@@ -39,6 +41,11 @@ export const CmsEmployees = () => {
             "password":employeePassword,
             "role":employeeRole
         });
+        employeesGet();
+    }
+
+    const employeesDelete = async (e) =>{
+        const response = await employeesDeleteRequest(e.target.dataset.id);
         employeesGet();
     }
 
@@ -89,7 +96,7 @@ export const CmsEmployees = () => {
                             <div><p>{value.role.name}</p></div>
                             <div><p>{value.login}</p></div>
                             <div><p>-</p></div>
-                            <div><button>Modify</button><button>Delete</button></div>
+                            <div><button>Modify</button><button data-id={value.id} onClick={employeesDelete}>Delete</button></div>
                         </div>
                     ) 
                     })

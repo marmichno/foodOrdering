@@ -2,6 +2,7 @@ import {CmsNavbar} from './CmsNavbar';
 import {useState, useEffect} from 'react';
 import {employeesRolesGetRequest} from '../requests/employeesRolesGetRequest';
 import {employeesRolesPostRequest} from '../requests/employeesRolesPostRequest';
+import {employeesRolesDeleteRequest} from '../requests/employeesRolesDeleteRequest';
 
 export const CmsEmployeesRoles = () =>{
 
@@ -21,6 +22,11 @@ export const CmsEmployeesRoles = () =>{
         const response = await employeesRolesPostRequest({
             "name":roleName
         });
+        getRoles();
+    }
+
+    const deleteRole = async (e) => {
+        const response = await employeesRolesDeleteRequest(e.target.dataset.id);
         getRoles();
     }
 
@@ -48,7 +54,7 @@ export const CmsEmployeesRoles = () =>{
                                 <div><p>{value.id}</p></div>
                                 <div><p>{value.name}</p></div>
                                 <div><p>123</p></div>
-                                <div><button>modify</button><button>delete</button></div>
+                                <div><button>modify</button><button data-id={value.id} onClick={deleteRole}>delete</button></div>
                             </div>
                         )
                     })

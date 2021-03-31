@@ -20,9 +20,8 @@ export const CmsProductsManagement = () => {
         getProducts();
     }, [])
 
-    useEffect( async () => {
-        const response = await groupGetRequest();
-        setGroups(response);
+    useEffect(() => {
+        getGroups();
     },[]);
 
     useEffect(() =>{
@@ -32,6 +31,12 @@ export const CmsProductsManagement = () => {
     useEffect(() => {
         filterProducts();
     },[searchBar]);
+
+    const getGroups = async () => {
+        const response = await groupGetRequest();
+        setGroups(response);
+        setProductGroup(response[0]);
+    }
 
     const filterProducts = () =>{
         setFilteredProducts(
