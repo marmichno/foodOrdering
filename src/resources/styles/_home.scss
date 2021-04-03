@@ -13,14 +13,9 @@
     background-color:rgba(0, 0, 0, 0.8);
     background-blend-mode:overlay;
 
-    video{
-        position:absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        z-index:0;
+    @media screen and (max-width: 800px) {
+        justify-content:center;
+        align-items:center;
     }
 
     .homeMainContainerOverlay{
@@ -42,6 +37,14 @@
         z-index:2;
         position:relative;
 
+        @media screen and (max-width: 800px) {
+            align-items:center;
+            text-align:center;
+            width:100%;
+            height:100%;
+            padding:1rem;
+        }
+
         hr{
             border: 0;
             height: 4px;
@@ -49,17 +52,33 @@
             width:100%;
             margin:2rem;
             max-width:700px;
+
+            @media screen and (max-width: 800px) {
+                width:50%;
+                margin:1.5rem;
+            }
         }
         h1{
             font-size:4rem;
             letter-spacing:0.2rem;
             line-height:5rem;
+
+            @media screen and (max-width: 800px) {
+                font-size:2rem;
+                letter-spacing:0rem;
+                line-height:2.8rem;
+            }
         }
         p{
             font-size:1.5rem;
             padding-bottom:1rem;
             max-width:640px; 
             line-height:1.6rem;
+
+            @media screen and (max-width: 800px) {
+                font-size:1rem;
+                padding-bottom:0;
+            }
         }
 
         .homeButtons{

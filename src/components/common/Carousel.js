@@ -65,7 +65,7 @@ export const Carousel = ({choosenFood}) =>{
                         </div>
                         <hr></hr>
                         <div className="productIngredients">
-                          <p>Contains: rice, nori leaf, fresh salmon, philadeplhia cream, cucumber, avocado, sesam</p>
+                          <p>rice, nori leaf, fresh salmon, philadeplhia cream, cucumber, avocado, sesam, sesam, sesam, sesam, sesam, sesam</p>
                           <h1>~ 6.00$</h1>
                         </div>
                         <button data-price={sushiPrice} data-name={'Sushi rolls'} onClick={addToCart}>Order</button>

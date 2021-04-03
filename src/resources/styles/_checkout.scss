@@ -9,6 +9,30 @@
     border-right: 2px solid $base-color;
     overflow-y:scroll;
 
+    @media screen and (max-width: 1628px) {
+        width:40%;
+    }
+
+    @media screen and (max-width: 1058px) {
+        width:50%;
+    }
+
+    @media screen and (max-width: 910px) {
+        width:60%;
+    }
+
+    @media screen and (max-width: 709px) {
+        width:70%;
+    }
+
+    @media screen and (max-width: 600px) {
+        width:80%;
+    }
+    
+    @media screen and (max-width: 529px) {
+        width:100%;
+    }
+
     .x{
         position:absolute;
         width:3em;
@@ -90,6 +114,11 @@
         height:20%;
         @include flexCenter();
 
+        @media screen and (max-width: 529px) {
+            flex-direction:column;
+            height:40%;
+        }
+
         .productImage{
             width:100%;
             height:70%;
@@ -102,6 +131,10 @@
             background-blend-mode:overlay;
             color:white;
 
+            @media screen and (max-width: 529px) {
+                height:40%
+            }
+
             h1{
                 font-size:2.5rem;
             }
@@ -113,6 +146,10 @@
             height:20%;
             width:100%;
             font-size:1.5rem;
+
+            @media screen and (max-width: 529px) {
+                height:60%;
+            }
 
             div:nth-child(1){
                 margin-bottom:1rem;

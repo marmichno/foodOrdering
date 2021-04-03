@@ -48,7 +48,7 @@ export const Navbar = () => {
     const [showNavbar, setShowNavbar] = useState(true);
 
     useEffect(() => {
-        if(order.length > 0){
+        if(order !== null){
             setQuantityNumber(order.map(value => value.quantity).reduce((a, b) => a + b));
         }else{
             setQuantityNumber(0);
@@ -76,7 +76,7 @@ export const Navbar = () => {
             <>
                 <div className="navbar">
                     <AnimatePresence>
-                    {location === 'http://localhost:3000/order' || location === 'http://localhost:3000/order/choose_delivery' || location === 'http://localhost:3000/order/choose_delivery/delivery_details'  ?
+                    {location.search("/order") !== -1  ?
                         <motion.div
                         variants={cartVariants}
                         initial="hidden"

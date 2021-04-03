@@ -20,11 +20,10 @@ const containerVariants = {
         transition: {ease: 'easeInOut', duration:0.5}
     }
   }
-
 export const Order = () => {
 
     const [currentActive, setCurrentActive] = useState(null);
-    const foodTypes = ['Sushi rolls', 'Ramen', 'Prawns', 'Sets'];
+    const foodTypes = ['Sushi rolls', 'Ramen', 'Prawns', 'Sets', 'Ramen', 'Prawns', 'Sets'];
     const [choosenFood, setChoosenFood] = useState('Sushi rolls');
 
     useEffect(() =>{
@@ -50,9 +49,9 @@ export const Order = () => {
             animate="visible"
             exit="exit"
             className="foodHeadersContainer">
-                {foodTypes.map(value => {
-                    return <h1 onClick={changeActive}>{value}</h1>
-                })}
+                    {foodTypes.map(value => {
+                        return <div><h1 onClick={changeActive}>{value}</h1></div>
+                    })}
             </motion.div>
 
             <Carousel choosenFood={choosenFood}/>
