@@ -36,12 +36,14 @@ const childVariants = {
 }
 
 const buttonVariants = {
+    initial:{
+        scale:1
+    },
     hover: {
-        scale: 1.3,
+        scale: 0.9,
         transition: {
-            yoyo: Infinity,
-            duration: 0.5,
-            type: 'tween'
+            yoyo:Infinity,
+            duration:0.5
         }
     }
 }
@@ -75,7 +77,13 @@ export const Home = () => {
                     <Link to={{
                         pathname:'/contact_us'
                     }}>
-                        <button>Contact Us</button>
+
+                        <motion.button
+                        variants={buttonVariants}
+                        whileHover="hover"
+                        >
+                        Contact Us</motion.button>
+
                     </Link>
                 </motion.div>
             </motion.div>

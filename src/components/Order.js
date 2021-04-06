@@ -1,6 +1,10 @@
 import {Carousel} from './common/Carousel';
 import {useState, useEffect} from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
+import {IoMdArrowDropdownCircle} from 'react-icons/io';
+import {CgScrollV} from 'react-icons/cg';
+import {groupGetRequest} from '../requests/groupGetRequest';
+
 
 const containerVariants = {
     hidden: {
@@ -19,27 +23,87 @@ const containerVariants = {
         x:'-100vw',
         transition: {ease: 'easeInOut', duration:0.5}
     }
-  }
+}
+
+const scrollContainerVariants = {
+    hidden: {
+        y: 500
+    },
+    visible: {
+        y: 0,
+        transition: {
+            type: 'spring',
+            delay: 0.5,
+            mass: 1,
+            damping: 12
+        }
+    },
+    exit: {
+        y:500,
+        transition: {ease: 'easeInOut', duration:0.5}
+    }
+}
+
+const bouncyAnimation = {
+    visible: {
+        scale: 1.1,
+        transition: {
+            duration:0.3,
+            yoyo:Infinity
+        }
+    }
+}
+
+const dropdownVariants = {
+    hidden: {
+        y: -500
+    },
+    visible: {
+        y: 0,
+        transition: {
+            type: 'spring',
+            mass: 1,
+            damping: 15
+        }
+    },
+    exit: {
+        scale:0.01,
+        transition: {ease: 'easeInOut', duration:0.5}
+    }
+}
+
 export const Order = () => {
 
-    const [currentActive, setCurrentActive] = useState(null);
-    const foodTypes = ['Sushi rolls', 'Ramen', 'Prawns', 'Sets', 'Ramen', 'Prawns', 'Sets'];
     const [choosenFood, setChoosenFood] = useState('Sushi rolls');
+    const [selectedGroup, setSelectedGroup] = useState([]);
+    const [productGroups, setProductGroups] = useState([]);
+    const [showProductGroups, setShowProductGroups] = useState(false);
 
     useEffect(() =>{
-        const allHeaders = document.querySelectorAll('.foodHeadersContainer h1');
-        allHeaders.forEach(element => element.classList.add('notActive'));
-        allHeaders[0].classList.add('active');
-        setCurrentActive(allHeaders[0].innerHTML);
+        // const allHeaders = document.querySelectorAll('.foodHeadersContainer h1');
+        // allHeaders.forEach(element => element.classList.add('notActive'));
+        // allHeaders[0].classList.add('active');
+        // setCurrentActive(allHeaders[0].innerHTML);
+        // setFoodTypesArray(showSlides());
+        getGroups();
     }, []);
 
+
+    const getGroups = async () =>{
+        const response = await groupGetRequest();
+        setProductGroups(response);
+        setSelectedGroup(response[0]);
+    }
+
     const changeActive = (e) => {
-        const allHeaders = document.querySelectorAll('.foodHeadersContainer h1');
+        const allHeaders = document.querySelectorAll('.foodHeadersContainer .foodTypesContainer .dropdown .toggle');
         allHeaders.forEach(element => element.classList.remove('active'));
         e.target.classList.add('active');
-        setCurrentActive(e.target.innerHTML);
-        setChoosenFood(e.target.innerHTML);
+        setSelectedGroup(e.target.innerHTML);
     }
+
+
+    
 
     return(
         <div className="orderMainContainer">
@@ -49,13 +113,46 @@ export const Order = () => {
             animate="visible"
             exit="exit"
             className="foodHeadersContainer">
-                    {foodTypes.map(value => {
-                        return <div><h1 onClick={changeActive}>{value}</h1></div>
-                    })}
+                <div className="foodGroupsContainer">
+                    <div className="list">
+                        <div className="selected"><h1>{selectedGroup !== undefined ? selectedGroup.name : null}</h1><hr></hr></div>
+                        <div className="toggle" onClick={() => setShowProductGroups(!showProductGroups)}><IoMdArrowDropdownCircle/></div>
+                        <AnimatePresence>
+                            {showProductGroups === true ?
+                                <motion.div className="dropdown"
+                                    variants={dropdownVariants}
+                                    initial="hidden"
+                                    animate="visible"
+                                    exit="exit"
+                                    >
+                                    {productGroups !== undefined ?
+                                    productGroups.map(value => {
+                                        return <div onClick={changeActive} className="list"><h1>{value.name}</h1></div>
+                                    })
+                                    : null
+                                    }
+                                </motion.div>
+                            : null
+                        }
+                        </AnimatePresence>
+                    </div>
+                </div>
             </motion.div>
 
             <Carousel choosenFood={choosenFood}/>
-
+        <motion.div
+        variants={scrollContainerVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        className="scroll">
+            <motion.div
+            variants={bouncyAnimation}
+            animate="visible" 
+            className="icon">
+                <CgScrollV/>
+            </motion.div>
+        </motion.div>
     </div>
     )
 }

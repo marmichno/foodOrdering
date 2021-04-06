@@ -9,46 +9,100 @@
     background-blend-mode:overlay;
     @include flexCenter();
     flex-direction:column;
+    justify-content:flex-end;
     min-height:600px; 
+
+    .scroll{
+        position:absolute;
+        right:0;
+        bottom:0;
+
+        .react-icons{
+            color: $base-color;
+            width:8rem;
+            height:8rem;
+            margin:0.5rem;
+        }
+    }
 
     .foodHeadersContainer{
         @include flexCenter();
-        overflow:hidden;
-
-        @media screen and (max-width: 500px) {
-            overflow-x:auto;
-            height:10%;
+        width:100%;
+        height:20%;
+        
+        .foodGroupsContainer{
+            @include flexCenter();
             width:100%;
-            overflow-y:hidden;
-            justify-content:flex-start;
-        }
+            height:100%;
 
-            div{
+            .list{
+                height:50%;
+                width:35%;
+                background-color:$background-color;
+                position:relative;
+                text-align:center;
+                @include flexCenter();
+                box-shadow: 15px 15px 0px -8px rgba(195,39,43,1);
+                
 
-                @media screen and (max-width: 500px) {
-                    width:100%;
+                .selected{
+                    z-index:10;
+                    width:80%;
+                    height:100%;
                     @include flexCenter();
-                    text-align:center;
+                    flex-direction:column;
+                    background-color:$mainContainerBackgroudColor;
+
+                    h1{
+                        font-size:3rem;
+                        color:black;
+                    }
+
+                    hr{
+                        border: 0;
+                        height: 4px;
+                        background: $base-color;
+                        width:30%;
+                        max-width:700px;
+                    }
                 }
 
-                h1{
-                    font-size:5.5vw;
-                    padding:2rem;
-                    cursor:pointer;
+                .toggle{
+                    z-index:10;
+                    width:20%;
+                    height:100%;
+                    color:$base-color;
+                    background-color:$mainContainerBackgroudColor;
+                    @include flexCenter();
 
-                    @media screen and (max-width: 500px) {
-                        font-size:10vw;
-                        width:100vw;
+                    .react-icons{
+                        z-index:9;
+                        width:70%;
+                        height:70%;
+                        cursor:pointer;
+                    }
+                }
+
+                .dropdown{
+                    width:80%;
+                    @include flexCenter();
+                    position:absolute;
+                    top:100%;
+                    left:0;
+                    background-color:$background-color;
+                    flex-direction:column;
+                    border:solid 2px $base-color;
+                    border-top:none;
+                    z-index:9;
+
+                    div{
+                        width:100%;
+                        background-color:transparent;
+                        z-index:9;
+                        box-shadow:none;
                     }
                 }
             }
-
-        .active{
-            color:$base-color !important;
-        }
-
-        .notActive{
-            color:white;
         }
     }
 
@@ -66,7 +120,7 @@
             grid-template-columns:repeat(2, 1fr);
         }
 
-        @media screen and (max-width: 900px) and (min-height: 550px) {
+        @media screen and (max-width: 900px) {
             grid-template-columns:repeat(1, 1fr);
         }
 
@@ -146,6 +200,7 @@
 
                         h1{
                             font-size:1.5rem;
+                            margin-bottom:1rem;
                         }
 
                         p{
@@ -176,12 +231,7 @@
                         padding-bottom:0.5rem;
                         padding-left:1.5rem;
                         padding-right:1.5rem;
-                        margin:2rem;
                         font-size:1.5rem;
-
-                        @media screen and (max-width: 490px) and (max-height:800px) {
-                            margin:1rem;
-                        }
 
                         @media screen and (max-height: 550px) {
                             margin:0rem;
