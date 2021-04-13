@@ -37,6 +37,8 @@ export const Checkout = ({hideCheckout}) => {
         }
     },[order]);
 
+    console.log(order);
+
     const changeQuantity = (e) => {
         const whichProduct = e.target.dataset.name;
         const removeOrAdd = e.target.innerHTML;

@@ -74,32 +74,33 @@ const dropdownVariants = {
 
 export const Order = () => {
 
-    const [choosenFood, setChoosenFood] = useState('Sushi rolls');
     const [selectedGroup, setSelectedGroup] = useState([]);
     const [productGroups, setProductGroups] = useState([]);
+    const [groupId, setGroupId] = useState(null);
     const [showProductGroups, setShowProductGroups] = useState(false);
 
     useEffect(() =>{
-        // const allHeaders = document.querySelectorAll('.foodHeadersContainer h1');
-        // allHeaders.forEach(element => element.classList.add('notActive'));
-        // allHeaders[0].classList.add('active');
-        // setCurrentActive(allHeaders[0].innerHTML);
-        // setFoodTypesArray(showSlides());
         getGroups();
     }, []);
 
 
     const getGroups = async () =>{
         const response = await groupGetRequest();
-        setProductGroups(response);
-        setSelectedGroup(response[0]);
+        if(response !== undefined){
+            setProductGroups(response);
+            setSelectedGroup(response[0].name);
+            setGroupId(response[0].id);
+        }else{
+            return;
+        }
     }
 
     const changeActive = (e) => {
         const allHeaders = document.querySelectorAll('.foodHeadersContainer .foodTypesContainer .dropdown .toggle');
         allHeaders.forEach(element => element.classList.remove('active'));
         e.target.classList.add('active');
-        setSelectedGroup(e.target.innerHTML);
+        setSelectedGroup(e.currentTarget.innerHTML);
+        setGroupId(e.currentTarget.dataset.id);
     }
 
 
@@ -115,7 +116,7 @@ export const Order = () => {
             className="foodHeadersContainer">
                 <div className="foodGroupsContainer">
                     <div className="list">
-                        <div className="selected"><h1>{selectedGroup !== undefined ? selectedGroup.name : null}</h1><hr></hr></div>
+                        <div className="selected"><h1>{selectedGroup !== undefined ? selectedGroup : null}</h1><hr></hr></div>
                         <div className="toggle" onClick={() => setShowProductGroups(!showProductGroups)}><IoMdArrowDropdownCircle/></div>
                         <AnimatePresence>
                             {showProductGroups === true ?
@@ -127,7 +128,7 @@ export const Order = () => {
                                     >
                                     {productGroups !== undefined ?
                                     productGroups.map(value => {
-                                        return <div onClick={changeActive} className="list"><h1>{value.name}</h1></div>
+                                        return <div className="dropdownList"><h1 data-id={value.id} onClick={changeActive}>{value.name}</h1></div>
                                     })
                                     : null
                                     }
@@ -139,7 +140,7 @@ export const Order = () => {
                 </div>
             </motion.div>
 
-            <Carousel choosenFood={choosenFood}/>
+            <Carousel groupId={groupId}/>
         <motion.div
         variants={scrollContainerVariants}
         initial="hidden"

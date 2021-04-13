@@ -48,7 +48,8 @@ export const Navbar = () => {
     const [showNavbar, setShowNavbar] = useState(true);
 
     useEffect(() => {
-        if(order !== null){
+        console.log(order);
+        if(order.length > 0){
             setQuantityNumber(order.map(value => value.quantity).reduce((a, b) => a + b));
         }else{
             setQuantityNumber(0);

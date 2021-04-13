@@ -1,4 +1,5 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import {productGetByIdRequest} from '../../requests/productGetByIdRequest';
 import {useDispatch} from 'react-redux';
 import {addProduct} from '../../actions/index'
 import {motion} from 'framer-motion';
@@ -22,7 +23,7 @@ const containerVariants = {
   }
 }
 
-export const Carousel = ({choosenFood}) =>{
+export const Carousel = ({groupId}) =>{
 
     const sushiPrice = 6.00;
     const ramenPrice = 8.00
@@ -31,7 +32,32 @@ export const Carousel = ({choosenFood}) =>{
 
     const dispatch = useDispatch();
 
-    const [products, setProducts] = useState(['product', 'product', 'product', 'product', 'product', 'product','product', 'product', 'product', 'product', 'product',]);
+    const [products, setProducts] = useState([]);
+
+    console.log(groupId);
+
+
+    useEffect(() => {
+      getProducts(groupId);
+    },[])
+
+    useEffect(() =>{
+      getProducts();
+    },[groupId]);
+
+    const getProducts = async () => {
+      if(groupId !== null){
+        const response = await productGetByIdRequest(groupId);
+        if(response !== undefined){
+          setProducts(response);
+        }
+      }
+    }
+
+    useEffect(() =>{
+      console.log(products);
+    },[products])
+
 
       const addToCart = (e) => {
         const price = e.target.dataset.price;
@@ -43,6 +69,8 @@ export const Carousel = ({choosenFood}) =>{
             quantity: 1
         }
 
+        console.log(productData);
+
         dispatch(addProduct(productData));
     }
 
@@ -53,7 +81,8 @@ export const Carousel = ({choosenFood}) =>{
         animate="visible"
         exit="exit"
         >
-              {products.map(value => {
+              {products !== undefined ?
+              products.map(value => {
                 return (
                   <div className="foodWrapper">
                     <div className="foodContainer">
@@ -61,19 +90,21 @@ export const Carousel = ({choosenFood}) =>{
                       </div>
                       <div className="productDetails">
                         <div className="productHeader">
-                          <h1>Philadelphia roll</h1>
+                          <h1>{value.productName}</h1>
                         </div>
                         <hr></hr>
                         <div className="productIngredients">
-                          <p>rice, nori leaf, fresh salmon, philadeplhia cream, cucumber, avocado, sesam, sesam, sesam, sesam, sesam, sesam</p>
-                          <h1>~ 6.00$</h1>
+                          <p>{value.description}</p>
+                          <h1>~ {value.price}</h1>
                         </div>
-                        <button data-price={sushiPrice} data-name={'Sushi rolls'} onClick={addToCart}>Order</button>
+                        <button data-price={value.price} data-name={value.productName} onClick={addToCart}>Order</button>
                       </div>
                     </div>
                   </div>
                 )
-              })}
+              })
+              : null
+              }
         </motion.div>
         )
 }

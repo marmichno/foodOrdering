@@ -28,8 +28,10 @@ export const CmsEmployees = () => {
     
     const employeesRolesGet = async () =>{
         const response = await employeesRolesGetRequest();
-        setEmployeeRole(response[0]);
-        setEmployeesRoles(response);
+        if(response !== undefined){
+            setEmployeeRole(response[0]);
+            setEmployeesRoles(response);
+        }
     }
 
     const employeesPost = async () =>{

@@ -130,18 +130,23 @@ export const CmsEmployeesSchedule = () =>{
     }
 
     const findShift = (shiftDate, shiftEmployeeId, event) =>{
-       const shift = schedule.filter(value => {
-            if(value.date === shiftDate && value.employeeEntity.id === shiftEmployeeId){
-                return true;
-            }else{
-                return false;
-            }
-        })[0];
+    
+        if(schedule !== undefined){
+            const shift = schedule.filter(value => {
+                    if(value.date === shiftDate && value.employeeEntity.id === shiftEmployeeId){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                })[0];
 
-        if(event === "findShift"){
-            return shift !== undefined ? shift.shiftEntity.id : "";
-        }else if(event === "deleteShift"){
-            return shift;
+                if(event === "findShift"){
+                    return shift !== undefined ? shift.shiftEntity.id : "";
+                }else if(event === "deleteShift"){
+                    return shift;
+                }
+        }else{
+            return
         }
     }
 

@@ -1,6 +1,7 @@
 const manageCheckoutReducer = (state = localStorage.getItem('order'), action) => {
 
     const product = action.payload;
+    console.log(product);
     state = JSON.parse(localStorage.getItem('order'));
 
     

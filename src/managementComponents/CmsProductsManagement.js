@@ -34,25 +34,29 @@ export const CmsProductsManagement = () => {
 
     const getGroups = async () => {
         const response = await groupGetRequest();
-        setGroups(response);
-        setProductGroup(response[0]);
+        if(response !== undefined){
+            setGroups(response);
+            setProductGroup(response[0]);
+        }
     }
 
     const filterProducts = () =>{
-        setFilteredProducts(
-            products.filter(value => {
-                if(searchBar.length === 0){
-                    return true;
-                }else{
-                    const regex = new RegExp(`^${searchBar}`, "i");
-                    if((value.productName).match(regex)){
+        if(products !== undefined){
+            setFilteredProducts(
+                products.filter(value => {
+                    if(searchBar.length === 0){
                         return true;
                     }else{
-                        return false;
+                        const regex = new RegExp(`^${searchBar}`, "i");
+                        if((value.productName).match(regex)){
+                            return true;
+                        }else{
+                            return false;
+                        }
                     }
-                }
-            })
-        )
+                })
+            )
+        }
     }
 
     const getProducts = async () =>{
