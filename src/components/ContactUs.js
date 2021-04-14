@@ -24,13 +24,15 @@ const containerVariants = {
 export const ContactUs = () => {
 
     return(
-        <div className="orderMainContainer">
+        <div className="contactUsMainContainer">
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
                 className="contactUsContainer">
+
+                <div className="mapContainer"><h1>There will be map</h1></div>
       
                 <div className="contactUsTextContainer">
                     <p><AiFillPhone/> 600 500 400</p>

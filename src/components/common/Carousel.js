@@ -91,8 +91,8 @@ export const Carousel = ({groupId}) =>{
                       <div className="productDetails">
                         <div className="productHeader">
                           <h1>{value.productName}</h1>
+                          <hr></hr>
                         </div>
-                        <hr></hr>
                         <div className="productIngredients">
                           <p>{value.description}</p>
                           <h1>~ {value.price}</h1>

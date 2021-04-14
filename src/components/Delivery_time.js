@@ -22,7 +22,7 @@ const containerVariants = {
 
 export const DeliveryTime = () => {
     return(
-        <div className="orderMainContainer">
+        <div className="deliveryTimeMainContainer">
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
