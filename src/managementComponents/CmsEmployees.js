@@ -55,6 +55,7 @@ export const CmsEmployees = () => {
         <div className="cmsEmployeesContainer">
             <CmsNavbar/>
             <div className="cmsEmployeesContent">
+                <div className="employeeRow"></div>
                 <div className="employeeRow">
                     <div><h1>Id</h1></div>
                     <div><h1>First name</h1></div>

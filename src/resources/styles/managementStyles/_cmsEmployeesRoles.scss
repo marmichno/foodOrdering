@@ -39,7 +39,6 @@
         .addRoleContainer{
             height:10%;
             @include flexCenter();
-            box-shadow: 2px 0px 21px -6px rgba(0,0,0,0.75);
 
             button{
                 @include button();

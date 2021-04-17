@@ -83,6 +83,8 @@ export const CmsProductsManagement = () => {
         <div className="productManagementMainContainer">
             <CmsNavbar/>
             <div className="productManagementContent">
+                <div className="productRow"></div>
+
                 <div className="productRow">
                     <div><h1>id</h1></div>
                     <div><h1>name</h1></div>

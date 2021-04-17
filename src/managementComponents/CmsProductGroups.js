@@ -32,6 +32,7 @@ export const CmsProductGroups = () =>{
         <div className="productGroupsMainContainer">
             <CmsNavbar/>
             <div className="productGroupsContent">
+                <div className="groupRow"></div>
                 <div className="groupRow">
                     <div><h1>id</h1></div>
                     <div><h1>Group name</h1></div>

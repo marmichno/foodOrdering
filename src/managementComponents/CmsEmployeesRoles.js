@@ -34,6 +34,7 @@ export const CmsEmployeesRoles = () =>{
         <div className="employeesRolesMainContainer">
             <CmsNavbar/>
             <div className="employeesRolesContent">
+                <div className="roleRow"></div>
                 <div className="roleRow">
                     <div><h1>id</h1></div>
                     <div><h1>Role name</h1></div>

@@ -21,6 +21,19 @@
         width:30%;
         font-size:2rem;
         border-radius:4px;
+        min-height:200px;
+
+        @media screen and (max-width: 1230px) {
+            width:40%;
+        }
+
+        @media screen and (max-width: 870px) {
+            width:50%;
+        }
+
+        @media screen and (max-width: 500px) {
+            width:70%;
+        }
 
         button{
             @include button();

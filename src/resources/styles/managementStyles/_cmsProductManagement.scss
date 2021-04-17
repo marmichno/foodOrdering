@@ -15,6 +15,7 @@
         .searchBar{
             @include flexCenter();
             height:10%;
+            box-shadow: 2px 0px 21px -6px rgba(0,0,0,0.75);
 
             input{
                 width:30%;

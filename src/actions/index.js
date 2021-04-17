@@ -1,3 +1,10 @@
+export const showCmsNavbar = (status) => {
+    return{
+        type: 'SHOWCMSNAVBAR',
+        payload: status
+    }
+}
+
 export const addProduct = (product) => {
     return{
         type: 'ADDPRODUCT',
