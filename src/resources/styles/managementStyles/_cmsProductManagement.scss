@@ -28,6 +28,29 @@
                 background-color:rgba(255, 255, 255, 0.9);
                 border: 2px solid black;
                 margin-right:2rem;
+
+                @media screen and (max-width:1200px){
+                    font-size:1.5rem;
+                }
+
+                @media screen and (max-width:1000px){
+                    font-size:1.1rem;
+                }
+
+                @media screen and (max-width:700px){
+                    width:50%;
+                    height:40%;
+                }
+            }
+
+            h1{
+                @media screen and (max-width:1200px){
+                    font-size:1.5rem;
+                }
+
+                @media screen and (max-width:1000px){
+                    font-size:1.1rem;
+                }
             }
         }
 
@@ -36,9 +59,11 @@
             grid-template-columns:5% 15% 10% 30% 10% 17.5% 10%;
             height:10%;
             text-align:center;
+            min-height:100px;
 
             .addInput{
                 @include flexCenter();
+                text-align:center;
                 input{
                     width:70%;
                     height:50%;
@@ -49,6 +74,16 @@
                     border:none;
                     background-color:rgba(255, 255, 255, 0.9);
                     border: 1px solid black;
+
+                    @media screen and (max-width:1200px){
+                        width:80%;
+                        font-size:1rem;
+                    }
+
+                    @media screen and (max-width:760px){
+                        width:90%;
+                        height:30%;
+                    }
                 }
 
                 select{
@@ -61,6 +96,16 @@
                     border:none;
                     background-color:rgba(255, 255, 255, 0.9);
                     border: 1px solid black;
+
+                    @media screen and (max-width:1200px){
+                        width:80%;
+                        font-size:1rem;
+                    }
+
+                    @media screen and (max-width:760px){
+                        width:90%;
+                        height:30%;
+                    }
                 }
 
                 option{
@@ -73,6 +118,10 @@
                     border:none;
                     background-color:rgba(255, 255, 255, 0.9);
                     border: 1px solid black;
+
+                    @media screen and (max-width:1200px){
+                        font-size:1rem;
+                    }
                 }
             }
 
@@ -81,8 +130,57 @@
             }
 
             .addButton{
+                @include flexCenter();
                 button{
-                    margin-right:0rem;
+                    @include button();
+
+                    @media screen and (max-width:1000px){
+                        margin-right:0;
+                        margin-bottom:0.1rem;
+                        padding:0.5rem;
+                        font-size:1rem;
+                    }
+
+                    @media screen and (max-width:700px){
+                        margin-right:0;
+                        margin-bottom:0.1rem;
+                        padding:0.2rem;
+                        font-size:0.8rem;
+                    }
+
+                    
+
+                }
+            }
+
+            .productButtons{
+                @include flexCenter();
+
+                @media screen and (max-width:1000px){
+                    flex-direction:column;
+                }
+                
+                button{
+                    @include button();
+                    margin-right:0.1rem;
+
+                    @media screen and (max-width:1470px){
+                        padding:1rem;
+                    }
+
+                    @media screen and (max-width:1000px){
+                        margin-right:0;
+                        margin-bottom:0.1rem;
+                        padding:0.5rem;
+                        font-size:1rem;
+                    }
+
+                    @media screen and (max-width:700px){
+                        margin-right:0;
+                        margin-bottom:0.1rem;
+                        padding:0.2rem;
+                        font-size:0.8rem;
+                    }
                 }
             }
             
@@ -90,18 +188,37 @@
                 @include flexCenter();
                 width:100%;
                 height:100%;
-
-                button{
-                    @include button();
-                    margin-right:1rem;
-                }
+                word-wrap: break-word;
 
                 h1{
                     color:$base-color;
+                    max-width: 100%;
+
+                    @media screen and (max-width:1200px){
+                        font-size:1.5rem;
+                    }
+
+                    @media screen and (max-width:1000px){
+                        font-size:1.1rem;
+                    }
+
+                    @media screen and (max-width:700px){
+                        font-size:0.7rem;
+                    }
                 }
 
                 p{
                     font-size:1.3rem;
+                    min-width:0;
+                    max-width: 80%;
+
+                    @media screen and (max-width:1200px){
+                        font-size:1rem;
+                    }
+
+                    @media screen and (max-width:600px){
+                        font-size:0.7rem;
+                    }
                 }
             }
         }

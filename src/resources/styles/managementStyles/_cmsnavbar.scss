@@ -2,8 +2,8 @@
     position:absolute;
     width:8%;
     height:8%;
-    left:0;
-    top:0;
+    left:10px;
+    top:10px;
 
     .react-icons{
         width:100%;
@@ -28,7 +28,20 @@
     box-shadow: 3px 2px 41px -2px rgba(0,0,0,0.5);
     position:absolute;
     left:0;
+    top:0;
     z-index:2;
+
+    @media screen and (max-width:1200px){
+        width:30%;
+    }
+
+    @media screen and (max-width:770px){
+        width:40%;
+    }
+
+    @media screen and (max-width:516px){
+        width:50%;
+    }
 
     a{
         text-decoration:none;
@@ -37,6 +50,15 @@
     h1{
         margin-bottom:3rem;
         color:white;
+
+        @media screen and (max-width:770px){
+            font-size:1.5rem;
+        }
+
+        @media screen and (max-width:516px){
+            font-size:1rem;
+            margin-bottom:1rem;
+        }
     }
 
     .close{
@@ -55,6 +77,14 @@
         @include flexCenter();
         flex-direction:column;
         margin-bottom:3rem;
+
+        @media screen and (max-width:770px){
+            margin-bottom:2rem;
+        }
+
+        @media screen and (max-width:516px){
+            margin-bottom:0rem;
+        }
         
         h1{
             margin-bottom:1rem;
@@ -62,6 +92,15 @@
 
         h2{
             color:white;
+
+            @media screen and (max-width:770px){
+                font-size:1.5rem;
+            }
+    
+            @media screen and (max-width:516px){
+                font-size:1rem;
+                margin-bottom:1rem;
+            }
         }
     }
 }

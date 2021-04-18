@@ -133,7 +133,7 @@ export const CmsProductsManagement = () => {
                                 <div><p>{value.description}</p></div>
                                 <div><p>4.50$</p></div>
                                 <div><p>{value.group.name}</p></div>
-                                <div><button>modify</button><button data-id={value.id} onClick={deleteProduct}>delete</button></div>
+                                <div className="productButtons"><button>modify</button><button data-id={value.id} onClick={deleteProduct}>delete</button></div>
                             </div>
                         )
                     })
