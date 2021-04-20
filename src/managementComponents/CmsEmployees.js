@@ -99,7 +99,7 @@ export const CmsEmployees = () => {
                             <div><p>{value.role.name}</p></div>
                             <div><p>{value.login}</p></div>
                             <div><p>-</p></div>
-                            <div><button>Modify</button><button data-id={value.id} onClick={employeesDelete}>Delete</button></div>
+                            <div className="buttons"><button>Modify</button><button data-id={value.id} onClick={employeesDelete}>Delete</button></div>
                         </div>
                     ) 
                     })

@@ -13,6 +13,7 @@
             grid-template-columns:25% 25% 25% 25%;
             height:10%;
             text-align:center;
+            min-height:100px;
 
             div{
                 @include flexCenter();
@@ -24,24 +25,75 @@
 
             h1{
                 color:$base-color;
+
+                @media screen and (max-width:1200px){
+                    font-size:1.5rem;
+                }
+
+                @media screen and (max-width:1000px){
+                    font-size:1.1rem;
+                }
+
+                @media screen and (max-width:700px){
+                    font-size:0.7rem;
+                }
             }
 
             button{
                 @include button();
                 margin-right:1rem;
+
+                @media screen and (max-width:1470px){
+                    padding:1rem;
+                }
+
+                @media screen and (max-width:1000px){
+                    margin-right:0.1rem;
+                    padding:0.5rem;
+                    font-size:1rem;
+                }
+
+                @media screen and (max-width:700px){
+                    padding:0.2rem;
+                    font-size:0.8rem;
+                }
             }
 
             p{
                 font-size:1.3rem;
+
+                @media screen and (max-width:1200px){
+                    font-size:1rem;
+                }
+
+                @media screen and (max-width:600px){
+                    font-size:0.7rem;
+                }
             }
         }
 
         .addRoleContainer{
             height:10%;
             @include flexCenter();
+            min-height:100px;
 
             button{
                 @include button();
+
+                @media screen and (max-width:1470px){
+                    padding:1rem;
+                }
+
+                @media screen and (max-width:1000px){
+                    margin-right:0.1rem;
+                    padding:0.5rem;
+                    font-size:1rem;
+                }
+
+                @media screen and (max-width:700px){
+                    padding:0.2rem;
+                    font-size:0.8rem;
+                }
             }
 
             input{
@@ -55,6 +107,12 @@
                 background-color:rgba(255, 255, 255, 0.9);
                 border: 1px solid black;
                 margin-right:2rem;
+
+                @media screen and (max-width:760px){
+                    width:40%;
+                    height:30%;
+                    font-size:0.7rem;
+                }
             }
         }
     }
