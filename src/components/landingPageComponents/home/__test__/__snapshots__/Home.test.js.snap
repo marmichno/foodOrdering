@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="homeMainContainer"
+>
+  <p>
+    swag
+  </p>
+  <div
+    className="homeContentContainer"
+    style={
+      Object {
+        "transform": "translateX(1000px) translateZ(0)",
+      }
+    }
+  >
+    <h1
+      style={
+        Object {
+          "transform": "translateX(1000px) translateZ(0)",
+        }
+      }
+    >
+      Freshly made sushi
+    </h1>
+    <h1
+      style={
+        Object {
+          "transform": "translateX(1000px) translateZ(0)",
+        }
+      }
+    >
+      Delicious ramen
+    </h1>
+    <h1
+      style={
+        Object {
+          "transform": "translateX(1000px) translateZ(0)",
+        }
+      }
+    >
+      Crispy prawns
+    </h1>
+    <h1
+      style={
+        Object {
+          "transform": "translateX(1000px) translateZ(0)",
+        }
+      }
+    >
+      Made with passion
+    </h1>
+    <hr
+      style={
+        Object {
+          "transform": "translateX(1000px) translateZ(0)",
+        }
+      }
+    />
+    <p
+      data-testid="pText"
+      style={
+        Object {
+          "transform": "translateX(1000px) translateZ(0)",
+        }
+      }
+    >
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Type and scrambled it to make a type specimen book.
+    </p>
+    <div
+      className="homeButtons"
+      style={
+        Object {
+          "transform": "translateX(1000px) translateZ(0)",
+        }
+      }
+    >
+      <a
+        href="/order"
+        onClick={[Function]}
+      >
+        <button
+          data-testid="btnOrderOnline"
+        >
+          Order Online
+        </button>
+      </a>
+      <a
+        href="/contact_us"
+        onClick={[Function]}
+      >
+        <button
+          data-testid="btnContactUs"
+        >
+          Contact Us
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;

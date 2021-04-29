@@ -25,3 +25,10 @@ export const quantityPlus = (product) => {
         payload: product
     }
 }
+
+export const changeOrderGroupId = (id) => {
+    return{
+        type: 'CHANGEID',
+        payload: id
+    }
+}

@@ -1,0 +1,55 @@
+.managementLoginMainContainer{
+    width:100vw;
+    height:100vh;
+    background-image:url("../../../resources/images/background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment: fixed;
+    background-color:rgba(0, 0, 0, 0.8);
+    background-blend-mode:overlay;
+    overflow:hidden;
+    @include flexCenter();
+    flex-direction:column;
+
+    .loginBox{
+        background-color:$background-color;
+        box-shadow: 94px 94px 0px -87px $base-color;
+        padding:2rem;
+        @include flexCenter();
+        flex-direction:column;
+        height:30%;
+        width:30%;
+        font-size:2rem;
+        border-radius:4px;
+        min-height:200px;
+
+        @media screen and (max-width: 1230px) {
+            width:40%;
+        }
+
+        @media screen and (max-width: 870px) {
+            width:50%;
+        }
+
+        @media screen and (max-width: 500px) {
+            width:70%;
+        }
+
+        button{
+            @include button();
+        }
+
+        input{
+            width:70%;
+            height:20%;
+            text-align:center;
+            font-size:1.5rem;
+            margin-bottom:1rem;
+            border-radius: 6px;
+            outline:none;
+            border:none;
+            background-color:rgba(255, 255, 255, 0.9);
+            border: 1px solid black;
+        }
+    }
+}

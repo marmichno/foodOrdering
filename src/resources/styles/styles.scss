@@ -1,14 +1,13 @@
-@import './variables';
 @import './mixins';
-@import './home';
-@import './navbar';
-@import './order';
-@import './checkout';
-@import './chooseDelivery';
-@import './deliveryDetails';
-@import './delliveryTime';
-@import './contactUs';
-@import './managementStyles/cmsPromotions';
+@import './variables';
+@import '../../components/landingPageComponents/checkout/checkout';
+@import '../../components//landingPageComponents/choose_delivery/chooseDelivery';
+@import '../../components/landingPageComponents/contactUs/contactUs';
+@import '../../components/landingPageComponents/delivery_details/deliveryDetails';
+@import '../../components/landingPageComponents/delivery_time/delliveryTime';
+@import '../../components/landingPageComponents/home/home';
+@import '../../components/landingPageComponents/navbar/navbar';
+@import '../../components/landingPageComponents/order/order';
 
 h1{
     font-family: 'Merienda', cursive;

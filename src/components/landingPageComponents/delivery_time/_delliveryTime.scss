@@ -1,0 +1,45 @@
+.deliveryTimeMainContainer{
+    width:100vw;
+    height:100vh;
+    background-image:url("../../../resources/images/background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment: fixed;
+    background-color:rgba(0, 0, 0, 0.8);
+    background-blend-mode:overlay;
+    @include flexCenter();
+    flex-direction:column;
+
+    .deliveryTimeContainer{
+        @include flexCenter();
+        flex-direction:column;
+        color:white;
+        padding:3rem;
+        text-align:center;
+
+        h1{
+            font-size:5rem;
+            margin-bottom:3rem;
+            
+            @media screen and (max-width: 1040px) {
+                font-size:4rem;
+            }
+        }
+        h2{
+            font-size:3rem;
+        }
+        p{
+            font-size:2.5rem;
+            letter-spacing:0.1rem;
+
+            @media screen and (max-width: 1040px) {
+                font-size:2rem;
+            }
+        }
+
+        button{
+            margin-top:2rem;
+            @include button();
+        }
+    }
+}
