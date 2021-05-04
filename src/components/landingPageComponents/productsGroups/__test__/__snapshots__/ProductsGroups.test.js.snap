@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="foodHeadersContainer"
+  style={
+    Object {
+      "transform": "translateX(-2000px) translateZ(0)",
+    }
+  }
+>
+  <div
+    className="foodGroupsContainer"
+  >
+    <div
+      className="list"
+    >
+      <div
+        className="selected"
+      >
+        <h1
+          data-testid="selected"
+        />
+        <hr />
+      </div>
+      <div
+        className="toggle"
+        data-testid="dropDown"
+        onClick={[Function]}
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 48C141.125 48 48 141.125 48 256s93.125 208 208 208 208-93.125 208-208S370.875 48 256 48zm0 272l-96-96h192l-96 96z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
