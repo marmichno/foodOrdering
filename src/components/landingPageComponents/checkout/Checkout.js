@@ -58,9 +58,9 @@ export const Checkout = ({hideCheckout}) => {
                 exit="exit"
                 className="orderToCheckout">
                     <div onClick={hideCheckout} className="hideCheckout"></div>
-                    {order.map(value => {
+                    {order.map((value, id) => {
                         return(
-                            <div className="checkoutProduct">
+                            <div key={id} className="checkoutProduct">
                                 <div className="productImage">
                                     <h1>{value.name}</h1>
                                 </div>
@@ -69,9 +69,9 @@ export const Checkout = ({hideCheckout}) => {
                                         <p>Price:{(value.price * value.quantity).toFixed(2)}$</p>
                                     </div>
                                     <div>
-                                        <button onClick={changeQuantity} className="plus" data-name={value.name}>+</button>
+                                        <button onClick={changeQuantity} data-testid="plus" className="plus" data-name={value.name}>+</button>
                                         <p>quantity:{value.quantity}</p>
-                                        <button onClick={changeQuantity} className="minus" data-name={value.name}>-</button>
+                                        <button onClick={changeQuantity} data-testid="minus" className="minus" data-name={value.name}>-</button>
                                     </div>
                                 </div>
                             </div>
@@ -109,3 +109,5 @@ export const Checkout = ({hideCheckout}) => {
         )
     }
 }
+
+export default Checkout;

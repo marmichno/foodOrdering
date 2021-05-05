@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "productName": "philadelphia",
+        "price": "6.00",
+        "description": "rice,nori,salmon,philadelphia cream",
+        "group": {
+            "id": 1,
+            "name": "sushi rolls"
+        }
+    },
+    {
+        "id": 2,
+        "productName": "philadelphia",
+        "price": "6.00",
+        "description": "rice,nori,salmon,philadelphia cream",
+        "group": {
+            "id": 1,
+            "name": "sushi rolls"
+        }
+    },
+    {
+        "id": 3,
+        "productName": "philadelphia",
+        "price": "6.00",
+        "description": "rice,nori,salmon,philadelphia cream",
+        "group": {
+            "id": 1,
+            "name": "sushi rolls"
+        }
+    },
+    {
+        "id": 4,
+        "productName": "philadelphia",
+        "price": "6.00",
+        "description": "rice,nori,salmon,philadelphia cream",
+        "group": {
+            "id": 1,
+            "name": "sushi rolls"
+        }
+    }
+]

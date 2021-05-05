@@ -35,7 +35,6 @@ export const Products = () =>{
     },[])
 
     useEffect(() =>{
-      console.log(productGroupId);
       getProducts();
     },[productGroupId]);
 
@@ -84,7 +83,7 @@ export const Products = () =>{
                           <p>{value.description}</p>
                           <h1>~ {value.price}</h1>
                         </div>
-                        <button data-price={value.price} data-name={value.productName} onClick={addToCart}>Order</button>
+                        <button data-testid={`addToCartBtn${id}`} data-price={value.price} data-name={value.productName} onClick={addToCart}>Order</button>
                       </div>
                     </div>
                   </div>
@@ -95,3 +94,5 @@ export const Products = () =>{
         </motion.div>
         )
 }
+
+export default Products;
