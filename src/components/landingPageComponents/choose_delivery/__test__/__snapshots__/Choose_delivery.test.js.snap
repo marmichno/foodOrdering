@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="chooseDeliveryContainer"
+>
+  <div
+    className="chooseDeliveryTextContainer"
+    style={
+      Object {
+        "transform": "translateX(2000px) translateZ(0)",
+      }
+    }
+  >
+    <h1>
+      Choose delivery option
+    </h1>
+    <button
+      onClick={[Function]}
+    >
+      I will pick it up
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      I want to order with delivery
+    </button>
+  </div>
+</div>
+`;

@@ -81,7 +81,7 @@ export const Checkout = ({hideCheckout}) => {
                         <div>
                             <hr></hr>
                         </div>
-                        <h1>Subtotal: {checkoutSum.toFixed(2)}$</h1>
+                        <h1 data-testid="subtotalPrice">Subtotal: {checkoutSum.toFixed(2)}$</h1>
                         <Link to={{
                             pathname:'/order/choose_delivery'
                         }}>

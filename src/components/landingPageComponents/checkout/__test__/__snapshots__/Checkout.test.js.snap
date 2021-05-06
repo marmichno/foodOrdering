@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="orderToCheckout"
+  style={
+    Object {
+      "transform": "translateX(-1000px) translateZ(0)",
+    }
+  }
+>
+  <div
+    className="hideCheckout"
+  />
+  <div
+    className="checkoutProduct"
+  >
+    <div
+      className="productImage"
+    >
+      <h1>
+        philadelphia
+      </h1>
+    </div>
+    <div
+      className="productPriceData"
+    >
+      <div>
+        <p>
+          Price:
+          12.00
+          $
+        </p>
+      </div>
+      <div>
+        <button
+          className="plus"
+          data-name="philadelphia"
+          data-testid="plus"
+          onClick={[Function]}
+        >
+          +
+        </button>
+        <p>
+          quantity:
+          2
+        </p>
+        <button
+          className="minus"
+          data-name="philadelphia"
+          data-testid="minus"
+          onClick={[Function]}
+        >
+          -
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="checkoutSum"
+  >
+    <div>
+      <hr />
+    </div>
+    <h1
+      data-testid="subtotalPrice"
+    >
+      Subtotal: 
+      0.00
+      $
+    </h1>
+    <a
+      href="/order/choose_delivery"
+      onClick={[Function]}
+    >
+      <button>
+        Go to order details
+      </button>
+    </a>
+  </div>
+</div>
+`;

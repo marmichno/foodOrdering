@@ -27,12 +27,12 @@ const containerVariants = {
   }
 }
 
-export const Delivery_details = (state) => {
+export const Delivery_details = ({location}) => {
 
     const order = useSelector(state => state.manageCheckoutReducer);
     const [checkoutSum, setCheckoutSum] = useState(0);
     const [paymentType, setPaymentType] = useState("");
-    const deliveryType = state.location.state.deliveryType;
+    const deliveryType = location.state.deliveryType;
 
     useEffect(() => {
         if(order.length > 0){
@@ -45,9 +45,9 @@ export const Delivery_details = (state) => {
 
         document.querySelectorAll(".deliveryDetailsContainer .formContainer .formCheckboxes div .active").forEach(element => element.classList.remove('active'));
 
-        selected.classList.add('active')
+        selected.classList.add('active');
 
-        setPaymentType(selected.dataset.paymentType);
+        setPaymentType(selected.dataset.paymenttype);
     }
 
     return(
@@ -60,53 +60,53 @@ export const Delivery_details = (state) => {
                 className="formContainer">
                 <div className="nameContainer">
                     <div>
-                        <label for="firstName">
+                        <label htmlFor="firstName">
                             <span className="contentName"><p>First Name</p></span>
                         </label>
-                        <input type="text" autocomplete="off" name="category" className="firstSentenceInput" required></input>  
+                        <input type="text" autoComplete="off" name="category" className="firstSentenceInput" required></input>  
                     </div>
 
                     <div>
-                    <label for="secondName">
+                    <label htmlFor="secondName">
                         <span className="contentName"><p>Last Name</p></span>
                     </label>
-                    <input type="text" autocomplete="off" name="category" className="firstSentenceInput" required></input>
+                    <input type="text" autoComplete="off" name="category" className="firstSentenceInput" required></input>
                     </div>
                 </div>
 
-                <label for="category">
+                <label htmlFor="category">
                     <span className="contentName"><p>Phone number</p></span>
                 </label>
-                <input type="tel" autocomplete="off" name="category" className="firstSentenceInput" required></input>
+                <input type="tel" autoComplete="off" name="category" className="firstSentenceInput" required></input>
 
                 {deliveryType === 'delivery' ? 
                 <>
-                <label for="category">
-                    <span className="contentName"><p>City</p></span>
+                <label htmlFor="category">
+                    <span data-testid="city" className="contentName"><p>City</p></span>
                 </label>
-                <input type="tel" autocomplete="off" name="category" className="firstSentenceInput" required></input>
+                <input type="tel" autoComplete="off" name="category" className="firstSentenceInput" required></input>
 
-                <label for="category">
+                <label htmlFor="category">
                     <span className="contentName"><p>Addres</p></span>
                 </label>
-                <input type="tel" autocomplete="off" name="category" className="firstSentenceInput" required></input>
+                <input type="tel" autoComplete="off" name="category" className="firstSentenceInput" required></input>
                 </>
                 : null}
 
-                <label for="category">
+                <label htmlFor="category">
                     <span className="contentName"><p>Additional notes</p></span>
                 </label>
-                <textarea autocomplete="off" name="category" className="firstSentenceInput" required></textarea>
+                <textarea autoComplete="off" name="category" className="firstSentenceInput" required></textarea>
 
                 <div className="formCheckboxes">
                     <div>
                         <p>Payment in advance</p>
-                        <ImCheckboxChecked data-paymentType='advance' onClick={changePaymentType}/>
+                        <ImCheckboxChecked data-testid="paymentInAdvance" data-paymenttype='advance' onClick={changePaymentType}/>
                     </div>
 
                     <div>
                         <p>Payment on delivery</p>
-                        <ImCheckboxChecked data-paymentType='delivery' onClick={changePaymentType}/>
+                        <ImCheckboxChecked data-testid="paymentOnDelivery" data-paymenttype='delivery' onClick={changePaymentType}/>
                     </div>
                 </div>
 

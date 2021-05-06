@@ -1,0 +1,370 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="deliveryDetailsContainer"
+>
+  <div
+    className="formContainer"
+    style={
+      Object {
+        "transform": "translateX(2000px) translateZ(0)",
+      }
+    }
+  >
+    <div
+      className="nameContainer"
+    >
+      <div>
+        <label
+          htmlFor="firstName"
+        >
+          <span
+            className="contentName"
+          >
+            <p>
+              First Name
+            </p>
+          </span>
+        </label>
+        <input
+          autoComplete="off"
+          className="firstSentenceInput"
+          name="category"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div>
+        <label
+          htmlFor="secondName"
+        >
+          <span
+            className="contentName"
+          >
+            <p>
+              Last Name
+            </p>
+          </span>
+        </label>
+        <input
+          autoComplete="off"
+          className="firstSentenceInput"
+          name="category"
+          required={true}
+          type="text"
+        />
+      </div>
+    </div>
+    <label
+      htmlFor="category"
+    >
+      <span
+        className="contentName"
+      >
+        <p>
+          Phone number
+        </p>
+      </span>
+    </label>
+    <input
+      autoComplete="off"
+      className="firstSentenceInput"
+      name="category"
+      required={true}
+      type="tel"
+    />
+    <label
+      htmlFor="category"
+    >
+      <span
+        className="contentName"
+      >
+        <p>
+          Additional notes
+        </p>
+      </span>
+    </label>
+    <textarea
+      autoComplete="off"
+      className="firstSentenceInput"
+      name="category"
+      required={true}
+    />
+    <div
+      className="formCheckboxes"
+    >
+      <div>
+        <p>
+          Payment in advance
+        </p>
+        <svg
+          data-paymenttype="advance"
+          data-testid="paymentInAdvance"
+          fill="currentColor"
+          height="1em"
+          onClick={[Function]}
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          version="1.1"
+          viewBox="0 0 16 16"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14 0h-12c-1.1 0-2 0.9-2 2v12c0 1.1 0.9 2 2 2h12c1.1 0 2-0.9 2-2v-12c0-1.1-0.9-2-2-2zM7 12.414l-3.707-3.707 1.414-1.414 2.293 2.293 4.793-4.793 1.414 1.414-6.207 6.207z"
+          />
+        </svg>
+      </div>
+      <div>
+        <p>
+          Payment on delivery
+        </p>
+        <svg
+          data-paymenttype="delivery"
+          data-testid="paymentOnDelivery"
+          fill="currentColor"
+          height="1em"
+          onClick={[Function]}
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          version="1.1"
+          viewBox="0 0 16 16"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14 0h-12c-1.1 0-2 0.9-2 2v12c0 1.1 0.9 2 2 2h12c1.1 0 2-0.9 2-2v-12c0-1.1-0.9-2-2-2zM7 12.414l-3.707-3.707 1.414-1.414 2.293 2.293 4.793-4.793 1.414 1.414-6.207 6.207z"
+          />
+        </svg>
+      </div>
+    </div>
+    <h1>
+      Total amount: 
+      0.00
+      $
+    </h1>
+    <a
+      href="/order/choose_delivery/delivery_details/delivery_time"
+      onClick={[Function]}
+    >
+      <button>
+        Confirm order details
+      </button>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`matches snapshot2 1`] = `
+<div
+  className="deliveryDetailsContainer"
+>
+  <div
+    className="formContainer"
+    style={
+      Object {
+        "transform": "translateX(2000px) translateZ(0)",
+      }
+    }
+  >
+    <div
+      className="nameContainer"
+    >
+      <div>
+        <label
+          htmlFor="firstName"
+        >
+          <span
+            className="contentName"
+          >
+            <p>
+              First Name
+            </p>
+          </span>
+        </label>
+        <input
+          autoComplete="off"
+          className="firstSentenceInput"
+          name="category"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div>
+        <label
+          htmlFor="secondName"
+        >
+          <span
+            className="contentName"
+          >
+            <p>
+              Last Name
+            </p>
+          </span>
+        </label>
+        <input
+          autoComplete="off"
+          className="firstSentenceInput"
+          name="category"
+          required={true}
+          type="text"
+        />
+      </div>
+    </div>
+    <label
+      htmlFor="category"
+    >
+      <span
+        className="contentName"
+      >
+        <p>
+          Phone number
+        </p>
+      </span>
+    </label>
+    <input
+      autoComplete="off"
+      className="firstSentenceInput"
+      name="category"
+      required={true}
+      type="tel"
+    />
+    <label
+      htmlFor="category"
+    >
+      <span
+        className="contentName"
+        data-testid="city"
+      >
+        <p>
+          City
+        </p>
+      </span>
+    </label>
+    <input
+      autoComplete="off"
+      className="firstSentenceInput"
+      name="category"
+      required={true}
+      type="tel"
+    />
+    <label
+      htmlFor="category"
+    >
+      <span
+        className="contentName"
+      >
+        <p>
+          Addres
+        </p>
+      </span>
+    </label>
+    <input
+      autoComplete="off"
+      className="firstSentenceInput"
+      name="category"
+      required={true}
+      type="tel"
+    />
+    <label
+      htmlFor="category"
+    >
+      <span
+        className="contentName"
+      >
+        <p>
+          Additional notes
+        </p>
+      </span>
+    </label>
+    <textarea
+      autoComplete="off"
+      className="firstSentenceInput"
+      name="category"
+      required={true}
+    />
+    <div
+      className="formCheckboxes"
+    >
+      <div>
+        <p>
+          Payment in advance
+        </p>
+        <svg
+          data-paymenttype="advance"
+          data-testid="paymentInAdvance"
+          fill="currentColor"
+          height="1em"
+          onClick={[Function]}
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          version="1.1"
+          viewBox="0 0 16 16"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14 0h-12c-1.1 0-2 0.9-2 2v12c0 1.1 0.9 2 2 2h12c1.1 0 2-0.9 2-2v-12c0-1.1-0.9-2-2-2zM7 12.414l-3.707-3.707 1.414-1.414 2.293 2.293 4.793-4.793 1.414 1.414-6.207 6.207z"
+          />
+        </svg>
+      </div>
+      <div>
+        <p>
+          Payment on delivery
+        </p>
+        <svg
+          data-paymenttype="delivery"
+          data-testid="paymentOnDelivery"
+          fill="currentColor"
+          height="1em"
+          onClick={[Function]}
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          version="1.1"
+          viewBox="0 0 16 16"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14 0h-12c-1.1 0-2 0.9-2 2v12c0 1.1 0.9 2 2 2h12c1.1 0 2-0.9 2-2v-12c0-1.1-0.9-2-2-2zM7 12.414l-3.707-3.707 1.414-1.414 2.293 2.293 4.793-4.793 1.414 1.414-6.207 6.207z"
+          />
+        </svg>
+      </div>
+    </div>
+    <h1>
+      Total amount: 
+      30.00
+      $
+    </h1>
+    <a
+      href="/order/choose_delivery/delivery_details/delivery_time"
+      onClick={[Function]}
+    >
+      <button>
+        Confirm order details
+      </button>
+    </a>
+  </div>
+</div>
+`;
