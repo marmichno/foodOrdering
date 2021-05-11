@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="managementLoginMainContainer"
+>
+  <div
+    className="loginBox"
+  >
+    <label
+      for="category"
+    >
+      <span
+        className="contentName"
+      >
+        <p>
+          Login
+        </p>
+      </span>
+    </label>
+    <input
+      autocomplete="off"
+      className="firstSentenceInput"
+      name="category"
+      required={true}
+      type="text"
+    />
+    <label
+      for="category"
+    >
+      <span
+        className="contentName"
+      >
+        <p>
+          Password
+        </p>
+      </span>
+    </label>
+    <input
+      autocomplete="off"
+      className="firstSentenceInput"
+      name="category"
+      required={true}
+      type="password"
+    />
+    <a
+      href="/cmsLogin/cms"
+      onClick={[Function]}
+    >
+      <button>
+        Login
+      </button>
+    </a>
+  </div>
+</div>
+`;

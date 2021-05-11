@@ -41,3 +41,4 @@ export const DeliveryTime = () => {
         </div>
     )
 }
+export default DeliveryTime;

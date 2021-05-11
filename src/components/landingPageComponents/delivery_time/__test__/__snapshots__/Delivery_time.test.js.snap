@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="deliveryTimeMainContainer"
+>
+  <div
+    className="deliveryTimeContainer"
+    style={
+      Object {
+        "transform": "translateX(2000px) translateZ(0)",
+      }
+    }
+  >
+    <h1>
+      Thanks for your order :)
+    </h1>
+    <p>
+      Your order will be delivered in: 
+      <b>
+        00:30
+      </b>
+    </p>
+    <p>
+      Order number: 
+      <b>
+        #245687
+      </b>
+    </p>
+    <a
+      href="/contact_us"
+      onClick={[Function]}
+    >
+      <button>
+        Contact us
+      </button>
+    </a>
+  </div>
+</div>
+`;
