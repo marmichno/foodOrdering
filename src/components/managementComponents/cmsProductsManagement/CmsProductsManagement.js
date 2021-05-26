@@ -119,7 +119,7 @@ export const CmsProductsManagement = () => {
                 </div>
 
                 <div className="searchBar">
-                    <input onChange={(e) => setSearchBar(e.target.value)} type="text" placeholder="Search" autocomplete="off" name="category" required></input><h1>Search</h1>
+                    <input data-testid="searchbar" onChange={(e) => setSearchBar(e.target.value)} type="text" placeholder="Search" autocomplete="off" name="category" required></input><h1>Search</h1>
                 </div>
 
                 {
