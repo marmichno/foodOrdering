@@ -98,35 +98,35 @@ export const CmsProductsManagement = () => {
                 <div className="productRow">
                     <div><p>-</p></div>
                     <div className="addInput"><input type="text" onChange={(e) => setProductName(e.target.value)}
-                     placeholder="philadelphia" autocomplete="off" name="category" required></input></div>
+                     placeholder="philadelphia" autoComplete="off" name="category" required></input></div>
                     <div className="addInput"><input type="text" onChange={(e) => setProductPrice(e.target.value)}
-                     placeholder="6.00" autocomplete="off" name="category" required></input></div>
+                     placeholder="6.00" autoComplete="off" name="category" required></input></div>
                     <div className="addInput"><input type="text" onChange={(e) => setProductDescription(e.target.value)}
-                     placeholder="rice, nori, philadelphia cream" autocomplete="off" name="category" required></input></div>
+                     placeholder="rice, nori, philadelphia cream" autoComplete="off" name="category" required></input></div>
                     <div><p>-</p></div>
                     <div className="addInput">
                         <select onChange={(e) => setProductGroup(groups.filter(value => value.name === e.target.value ? true : false)[0])}>
                             {
                             groups !== undefined ?
-                            groups.map(value => {
-                                return <option data-groupId={value.id}>{value.name}</option>
+                            groups.map((value, index) => {
+                                return <option key={index} data-groupId={value.id}>{value.name}</option>
                             })
                             : null
                             }
                         </select>
                     </div>
-                    <div className="addButton" onClick={addProduct}><button>save</button></div>
+                    <div className="addButton" data-testid="addButton" onClick={addProduct}><button>save</button></div>
                 </div>
 
                 <div className="searchBar">
-                    <input data-testid="searchbar" onChange={(e) => setSearchBar(e.target.value)} type="text" placeholder="Search" autocomplete="off" name="category" required></input><h1>Search</h1>
+                    <input data-testid="searchbar" onChange={(e) => setSearchBar(e.target.value)} type="text" placeholder="Search" autoComplete="off" name="category" required></input><h1>Search</h1>
                 </div>
 
                 {
                 products !== undefined ?
-                    filteredProducts.map(value => {
+                    filteredProducts.map((value, index) => {
                         return(
-                            <div className="productRow">
+                            <div key={index} className="productRow">
                                 <div><p>{value.id}</p></div>
                                 <div><p>{value.productName}</p></div>
                                 <div><p>{parseInt(value.price).toFixed(2)}$</p></div>
