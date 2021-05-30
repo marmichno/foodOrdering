@@ -4,7 +4,6 @@ import {render, fireEvent, waitFor, screen} from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux'; 
 import mockedAxios from 'axios';
-import axios from 'axios';
 import validProductsJson from '../__mocks__/validProducts.json';
 import TestRenderer from "react-test-renderer";
 
