@@ -23,6 +23,7 @@ export const CmsEmployees = () => {
 
     const employeesGet = async () =>{
         const response = await employeesGetRequest();
+        console.log(response);
         setEmployees(response);
     }
     

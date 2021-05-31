@@ -1,0 +1,14 @@
+[
+    {
+        "id": 482,
+        "firstName": "Marcin",
+        "surname": "Dyl",
+        "phoneNumber": "123234123",
+        "login": "asd",
+        "password": "asd",
+        "role": {
+            "id": 481,
+            "name": "sushi chef"
+        }
+    }
+]
