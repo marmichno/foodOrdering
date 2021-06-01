@@ -105,11 +105,11 @@ export const CmsProductsManagement = () => {
                      placeholder="rice, nori, philadelphia cream" autoComplete="off" name="category" required></input></div>
                     <div><p>-</p></div>
                     <div className="addInput">
-                        <select onChange={(e) => setProductGroup(groups.filter(value => value.name === e.target.value ? true : false)[0])}>
+                        <select data-testid="groupSelect" onChange={(e) => setProductGroup(groups.filter(value => value.name === e.target.value ? true : false)[0])}>
                             {
                             groups !== undefined ?
                             groups.map((value, index) => {
-                                return <option key={index} data-groupId={value.id}>{value.name}</option>
+                                return <option key={index} data-groupid={value.id}>{value.name}</option>
                             })
                             : null
                             }

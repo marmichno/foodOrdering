@@ -142,6 +142,7 @@ exports[`matches snapshot 1`] = `
         className="addInput"
       >
         <select
+          data-testid="groupSelect"
           onChange={[Function]}
         />
       </div>

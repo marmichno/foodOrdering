@@ -240,3 +240,5 @@ export const CmsEmployeesSchedule = () =>{
         </div>
     )
 }
+
+export default CmsEmployeesSchedule;

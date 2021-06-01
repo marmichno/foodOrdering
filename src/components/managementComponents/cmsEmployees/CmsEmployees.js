@@ -23,7 +23,6 @@ export const CmsEmployees = () => {
 
     const employeesGet = async () =>{
         const response = await employeesGetRequest();
-        console.log(response);
         setEmployees(response);
     }
     
@@ -70,29 +69,29 @@ export const CmsEmployees = () => {
 
                 <div className="employeeRow">
                     <div><p>-</p></div>
-                    <div onChange={(e) => setEmployeeFirstName(e.target.value)} className="addInput"><input type="text" placeholder="Marcin" autocomplete="off" name="category" required></input></div>
-                    <div onChange={(e) => setEmployeeLastName(e.target.value)} className="addInput"><input type="text" placeholder="Dyl" autocomplete="off" name="category" required></input></div>
-                    <div onChange={(e) => setEmployeePhoneNumber(e.target.value)} className="addInput"><input type="text" placeholder="123-245-638" autocomplete="off" name="category"></input></div>
+                    <div onChange={(e) => setEmployeeFirstName(e.target.value)} className="addInput"><input type="text" placeholder="Marcin" autoComplete="off" name="category" required></input></div>
+                    <div onChange={(e) => setEmployeeLastName(e.target.value)} className="addInput"><input type="text" placeholder="Dyl" autoComplete="off" name="category" required></input></div>
+                    <div onChange={(e) => setEmployeePhoneNumber(e.target.value)} className="addInput"><input type="text" placeholder="123-245-638" autoComplete="off" name="category"></input></div>
                     <div className="addInput">
                         <select onChange={(e) => setEmployeeRole(employeesRoles.filter(value => value.name === e.target.value ? true : false)[0])}>
                             {employeesRoles !== undefined ?
-                                employeesRoles.map(value => {
-                                    return <option>{value.name}</option>
+                                employeesRoles.map((value, index) => {
+                                    return <option key={index}>{value.name}</option>
                                 })
                             : null
                             }
                         </select>
                     </div>
-                    <div onChange={(e) => setEmployeeLogin(e.target.value)} className="addInput"><input type="text" placeholder="Login" autocomplete="off" name="category" required></input></div>
-                    <div onChange={(e) => setEmployeePassword(e.target.value)} className="addInput"><input type="password" placeholder="password" autocomplete="off" name="category" required></input></div>
+                    <div onChange={(e) => setEmployeeLogin(e.target.value)} className="addInput"><input type="text" placeholder="Login" autoComplete="off" name="category" required></input></div>
+                    <div onChange={(e) => setEmployeePassword(e.target.value)} className="addInput"><input type="password" placeholder="password" autoComplete="off" name="category" required></input></div>
                     <div><button onClick={employeesPost}>Add</button></div>
                 </div>
 
                 {
                 employees !== undefined ?
-                    employees.map(value => {
+                    employees.map((value, index) => {
                     return(
-                        <div className="employeeRow">
+                        <div key={index} className="employeeRow">
                             <div><p>{value.id}</p></div>
                             <div><p>{value.firstName}</p></div>
                             <div><p>{value.surname}</p></div>

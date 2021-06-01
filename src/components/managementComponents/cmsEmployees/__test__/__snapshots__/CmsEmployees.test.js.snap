@@ -107,7 +107,7 @@ exports[`matches snapshot 1`] = `
         onChange={[Function]}
       >
         <input
-          autocomplete="off"
+          autoComplete="off"
           name="category"
           placeholder="Marcin"
           required={true}
@@ -119,7 +119,7 @@ exports[`matches snapshot 1`] = `
         onChange={[Function]}
       >
         <input
-          autocomplete="off"
+          autoComplete="off"
           name="category"
           placeholder="Dyl"
           required={true}
@@ -131,7 +131,7 @@ exports[`matches snapshot 1`] = `
         onChange={[Function]}
       >
         <input
-          autocomplete="off"
+          autoComplete="off"
           name="category"
           placeholder="123-245-638"
           type="text"
@@ -149,7 +149,7 @@ exports[`matches snapshot 1`] = `
         onChange={[Function]}
       >
         <input
-          autocomplete="off"
+          autoComplete="off"
           name="category"
           placeholder="Login"
           required={true}
@@ -161,7 +161,7 @@ exports[`matches snapshot 1`] = `
         onChange={[Function]}
       >
         <input
-          autocomplete="off"
+          autoComplete="off"
           name="category"
           placeholder="password"
           required={true}

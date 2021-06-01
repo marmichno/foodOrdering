@@ -43,15 +43,15 @@ export const CmsEmployeesRoles = () =>{
                 </div>
 
                 <div className="addRoleContainer">
-                    <input onChange={(e) => setRoleName(e.target.value)} type="text" placeholder="group name" autocomplete="off" name="category" required></input>
+                    <input onChange={(e) => setRoleName(e.target.value)} type="text" placeholder="group name" autoComplete="off" name="category" required></input>
                     <button onClick={addRole}>Add employee role</button>
                 </div>
 
                 {
                 roles !== undefined ?
-                    roles.map(value => {
+                    roles.map((value, index) => {
                         return(
-                            <div className="roleRow">
+                            <div key={index} className="roleRow">
                                 <div><p>{value.id}</p></div>
                                 <div><p>{value.name}</p></div>
                                 <div><p>123</p></div>
