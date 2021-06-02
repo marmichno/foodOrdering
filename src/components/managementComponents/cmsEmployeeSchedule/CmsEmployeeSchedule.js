@@ -164,16 +164,16 @@ export const CmsEmployeesSchedule = () =>{
                 <div className="shiftsContainer">
                     <div className="shiftsInfoContainer">
                         <div className="shiftInfo">
-                            <input onChange={(e) => setDeleteShiftId(e.target.value)} type="number" placeholder="shift id" autocomplete="off" name="category" required></input>
+                            <input onChange={(e) => setDeleteShiftId(e.target.value)} type="number" placeholder="shift id" autoComplete="off" name="category" required></input>
                             <button onClick={deleteShift}>delete</button>
                         </div>
                         <div className="shiftInfo">
-                            <h1 data-shift={0} onClick={changeSelectedShift}>day off</h1>
+                            <h1 data-shift={0} data-testid='dayOff' onClick={changeSelectedShift}>day off</h1>
                         </div>
                         {shifts !== undefined ?
-                            shifts.map(value => {
-                                return <div className="shiftInfo">
-                                            <h1 data-shift={value.id} onClick={changeSelectedShift}>
+                            shifts.map((value, index) => {
+                                return <div key={index} className="shiftInfo">
+                                            <h1 data-testid={`shift${index}`} data-shift={value.id} onClick={changeSelectedShift}>
                                                 {value.id} - {value.range}
                                             </h1>
                                         </div>
@@ -182,21 +182,21 @@ export const CmsEmployeesSchedule = () =>{
                         }
                     </div>
                     <div className="addShifts">
-                        <input onChange={(e) => setShiftRangeText(e.target.value)} type="text" placeholder="hour range ex: 16:30-24:30" autocomplete="off" name="category" required></input>
+                        <input onChange={(e) => setShiftRangeText(e.target.value)} type="text" placeholder="hour range ex: 16:30-24:30" autoComplete="off" name="category" required></input>
                         <button onClick={addShift}>add new shift</button>
                     </div>
                 </div>
 
                 <div className="calendarContainer">
                     
-                    <div className="changeDate">
+                    <div key="changeDate" className="changeDate">
                         <button onClick={changeDate}>previous</button><h1>{`${selectedYear}, ${monthNames[selectedMonth]}`}</h1><button onClick={changeDate}>next</button>
                     </div>
 
                     <div className="employeeRow">
                     <div className="employee"></div>
-                    {createArrayOfDays(selectedMonth, selectedYear).map(value =>{
-                        return <div><b>{value.dayDate}</b></div>
+                    {createArrayOfDays(selectedMonth, selectedYear).map((value, index) =>{
+                        return <div key={index}><b>{value.dayDate}</b></div>
                     })}
                     </div>
                     {
@@ -204,14 +204,16 @@ export const CmsEmployeesSchedule = () =>{
                         employees.map((employee, id) => {
                             return(
                                 <>
-                                    <div className="employeeRow">
+                                    <div key={id} className="employeeRow">
                                         <div className="employee">{employee.firstName}</div>
-                                            {createArrayOfDays(selectedMonth, selectedYear).map(value => {
+                                            {createArrayOfDays(selectedMonth, selectedYear).map((value, index) => {
                                                 const date = `${value.selectedYear}-${value.selectedMonth}-${value.dayDate}`
 
                                                 if(value.dayName === 'Saturday' || value.dayName === 'Sunday'){
 
-                                                    return <div 
+                                                    return <div
+                                                    key={`numOfDays${index}`}
+                                                    data-testid={`numOfDay${index}_${employee.id}`}
                                                     onClick={modifyEmployeeShift}
                                                     data-date={date}
                                                     data-employee={employee.id} 
@@ -221,6 +223,8 @@ export const CmsEmployeesSchedule = () =>{
                                                     </div>
                                                 }else{
                                                     return <div
+                                                    key={`numOfDay${index}${employee.id}`}
+                                                    data-testid={`numOfDay${index}_${employee.id}`}
                                                     onClick={modifyEmployeeShift}
                                                     data-date={date}
                                                     data-employee={employee.id}

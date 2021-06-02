@@ -18,8 +18,6 @@ export const employeesSchedulePostRequest = async (date, shiftId, employeeId) =>
         }
     });
 
-    console.log(body);
-
     try{
         const request = await axios.post('http://localhost:8080/api/schedule', body, config);
         const response = await request.data;

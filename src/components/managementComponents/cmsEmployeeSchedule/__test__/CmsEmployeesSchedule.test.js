@@ -32,6 +32,67 @@ test("checks if shifts are visible after api call", async () => {
     })
 });
 
+test("checks if employees are visible after api call", async () => {
+
+    mock.onGet("http://localhost:8080/api/employee").reply(200, validEmployeeJson);
+    mock.onGet("http://localhost:8080/api/schedule/2021/6").reply(200, validSchedulesJson);
+    mock.onGet("http://localhost:8080/api/shift").reply(200, validShiftsJson);
+
+    const {getAllByText} = render(<Provider store={store}><CmsEmployeesSchedule/></Provider>);
+
+    await waitFor(() => {
+        expect(getAllByText('Marcin'));
+    })
+});
+
+test("checks if shift could be added to schedule", async () => {
+
+    mock.onGet("http://localhost:8080/api/employee").reply(200, validEmployeeJson);
+    mock.onGet("http://localhost:8080/api/schedule/2021/6").reply(200, validSchedulesJson);
+    mock.onGet("http://localhost:8080/api/shift").reply(200, validShiftsJson);
+    mock.onPost("http://localhost:8080/api/schedule").reply(200);
+
+    const {getAllByText, getByTestId} = render(<Provider store={store}><CmsEmployeesSchedule/></Provider>);
+
+    await waitFor(() => {
+        fireEvent.click(getByTestId("shift1"));
+    });
+
+    await waitFor(() => {
+        fireEvent.click(getByTestId("numOfDay9_482"));
+    });
+
+    await waitFor(() => {
+        expect(mock.history.post[0].data).toBe(JSON.stringify({"date":"2021-06-10","shiftEntity":{"id":546},"employeeEntity":{"id":482}}));
+    })
+    
+    mock.resetHistory();
+});
+
+test("checks if shift could be deleted from schedule", async () => {
+
+    mock.onGet("http://localhost:8080/api/employee").reply(200, validEmployeeJson);
+    mock.onGet("http://localhost:8080/api/schedule/2021/6").reply(200, validSchedulesJson);
+    mock.onGet("http://localhost:8080/api/shift").reply(200, validShiftsJson);
+    mock.onPost("http://localhost:8080/api/schedule").reply(200);
+    mock.onDelete("http://localhost:8080/api/schedule/609").reply(200);
+
+    const {getAllByText, getByTestId} = render(<Provider store={store}><CmsEmployeesSchedule/></Provider>);
+
+    await waitFor(() => {
+        fireEvent.click(getByTestId("dayOff"));
+    })
+
+    await waitFor(() => {
+        fireEvent.click(getByTestId("numOfDay0_482"));
+    });
+
+    await waitFor(() => {
+        expect(mock.history.delete[0].url).toBe('http://localhost:8080/api/schedule/609');
+    });
+});
+
+
 test("matches snapshot", () => {
     const tree = TestRenderer.create(<Provider store={store}><CmsEmployeesSchedule/></Provider>).toJSON();
     expect(tree).toMatchSnapshot();

@@ -57,7 +57,7 @@ exports[`matches snapshot 1`] = `
           className="shiftInfo"
         >
           <input
-            autocomplete="off"
+            autoComplete="off"
             name="category"
             onChange={[Function]}
             placeholder="shift id"
@@ -75,6 +75,7 @@ exports[`matches snapshot 1`] = `
         >
           <h1
             data-shift={0}
+            data-testid="dayOff"
             onClick={[Function]}
           >
             day off
@@ -85,7 +86,7 @@ exports[`matches snapshot 1`] = `
         className="addShifts"
       >
         <input
-          autocomplete="off"
+          autoComplete="off"
           name="category"
           onChange={[Function]}
           placeholder="hour range ex: 16:30-24:30"
